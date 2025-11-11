@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TWNAS XXXV</title>
   <style>
-    /* Style Umum */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #1e3c72, #2a5298);
@@ -19,30 +19,90 @@
     }
 
     /* 🔹 HEADER MENGAMBANG */
-    .header {
+    header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       background: rgba(245, 44, 14, 0.63);
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(8px);
       color: white;
-      text-align: center;
-      padding: 15px 0;
-      font-size: 1.4em;
-      font-weight: 700;
-      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 50px;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
       transition: background 0.4s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
 
-    /* Efek saat discroll (header sedikit transparan) */
-    .header.scrolled {
+    header.scrolled {
       background: rgba(30, 60, 114, 0.7);
     }
 
-    /* Bagian Hero (Halaman Awal) */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo img {
+      width: 60px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.2;
+    }
+
+    .logo-text h1 {
+      font-size: 1.4em;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .logo-text p {
+      font-size: 0.9em;
+      color: #fff;
+      opacity: 0.9;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd5c0;
+    }
+
+    .btn-registrasi {
+      background-color: #a03700;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-registrasi:hover {
+      background-color: #cc4a00;
+      transform: scale(1.05);
+    }
+
+    /* Hero Section */
     .hero {
       height: 100vh;
       display: flex;
@@ -50,12 +110,14 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 100px 20px 20px; /* dikurangi karena ada header */
+      padding: 100px 20px 20px;
     }
+
     .hero h1 {
       font-size: 3em;
       animation: fadeInDown 1.2s ease forwards;
     }
+
     .hero p {
       margin-top: 20px;
       font-size: 1.2em;
@@ -63,7 +125,7 @@
       animation: fadeInUp 1.2s ease forwards;
     }
 
-    /* Section animasi */
+    /* Section Animasi Scroll */
     section {
       min-height: 100vh;
       display: flex;
@@ -82,7 +144,6 @@
       transform: translateY(0);
     }
 
-    /* Tombol di bagian bawah */
     .buttons {
       display: flex;
       gap: 20px;
@@ -106,11 +167,11 @@
       transform: scale(1.05);
     }
 
-    /* Animasi awal */
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
@@ -119,47 +180,53 @@
 </head>
 <body>
 
-  <!-- 🔹 Header Mengambang -->
-  <div class="header" id="header"> TWNAS XXXV 2025</div>
+  <!-- 🔹 HEADER -->
+  <header id="header">
+    <div class="logo">
+      <img src="logo.png" alt="Logo TWNAS" />
+      <div class="logo-text">
+        <h1>Temu Wicara Nasional</h1>
+        <p>XXXV FKMTSI 2025</p>
+      </div>
+    </div>
 
-  <!-- Bagian awal -->
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Tora Membantu</a>
+      <a href="#">Team</a>
+      <button class="btn-registrasi">Registrasi</button>
+    </nav>
+  </header>
+
+  <!-- Bagian Hero -->
   <div class="hero">
     <h1>TWNAS XXXV 2025</h1>
     <p>Website ini berisi informasi dan panduan seputar TWNAS XXXV.</p>
   </div>
 
-  <!-- Bagian konten 1 -->
+  <!-- Konten -->
   <section>
     <h2>✨ Tentang Kami</h2>
     <p>Kami berfokus pada pengembangan website modern, interaktif, dan responsif.</p>
   </section>
 
-  <!-- Bagian konten 2 -->
   <section>
     <h2>🚀 Proyek Kami</h2>
     <p>Berbagai proyek kreatif yang telah kami buat dengan teknologi terkini.</p>
   </section>
 
-  <!-- Bagian konten 3 -->
   <section>
     <h2>📞 Contact Person</h2>
     <p>Silahkan hubungi nomor dibawah ini jika butuh bantuan!</p>
-
     <div class="buttons">
-      <a href="https://wa.me/6282251520792?text=Halo%20saya%20ingin%20bertanya%20tentang%20akomodasi" class="btn" target="_blank">
-        Akomodasi
-      </a>
-      <a href="https://wa.me/6282251520792?text=Halo%20saya%20ingin%20bertanya%20tentang%20transportasi" class="btn" target="_blank">
-        Transportasi
-      </a>
-      <a href="https://wa.me/6282251520792?text=Halo%20saya%20ingin%20bertanya%20tentang%20acara" class="btn" target="_blank">
-        Acara
-      </a>
+      <a href="https://wa.me/6282251520792?text=Halo%20saya%20ingin%20bertanya%20tentang%20akomodasi" class="btn" target="_blank">Akomodasi</a>
+      <a href="https://wa.me/6282251520792?text=Halo%20saya%20ingin%20bertanya%20tentang%20transportasi" class="btn" target="_blank">Transportasi</a>
+      <a href="https://wa.me/6282251520792?text=Halo%20saya%20ingin%20bertanya%20tentang%20acara" class="btn" target="_blank">Acara</a>
     </div>
   </section>
 
   <script>
-    // Animasi muncul saat scroll
     const sections = document.querySelectorAll("section");
     const header = document.getElementById("header");
 
@@ -167,17 +234,10 @@
       const triggerBottom = window.innerHeight * 0.85;
       sections.forEach(sec => {
         const boxTop = sec.getBoundingClientRect().top;
-        if (boxTop < triggerBottom) {
-          sec.classList.add("visible");
-        }
+        if (boxTop < triggerBottom) sec.classList.add("visible");
       });
 
-      // Efek header berubah saat discroll
-      if (window.scrollY > 50) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
+      header.classList.toggle("scrolled", window.scrollY > 50);
     };
 
     window.addEventListener("scroll", revealOnScroll);
