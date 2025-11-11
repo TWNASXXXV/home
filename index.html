@@ -13,7 +13,7 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      background: #1e3c72;
       color: white;
       overflow-x: hidden;
     }
@@ -37,7 +37,7 @@
     }
 
     header.scrolled {
-      background: rgba(30, 60, 114, 0.7);
+      background: rgba(30, 60, 114, 0.8);
     }
 
     .logo {
@@ -102,7 +102,7 @@
       transform: scale(1.05);
     }
 
-    /* Hero Section */
+    /* 🔹 HERO SECTION (warna 1) */
     .hero {
       height: 100vh;
       display: flex;
@@ -111,6 +111,7 @@
       justify-content: center;
       text-align: center;
       padding: 100px 20px 20px;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
     }
 
     .hero h1 {
@@ -125,7 +126,7 @@
       animation: fadeInUp 1.2s ease forwards;
     }
 
-    /* Section Animasi Scroll */
+    /* 🔹 SECTION DASAR */
     section {
       min-height: 100vh;
       display: flex;
@@ -142,6 +143,19 @@
     section.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* 🔹 Warna berbeda untuk tiap section */
+    .about {
+      background: linear-gradient(135deg, #2a5298, #4e73df);
+    }
+
+    .projects {
+      background: linear-gradient(135deg, #4e73df, #f54242);
+    }
+
+    .contact {
+      background: linear-gradient(135deg, #f54242, #f57c00);
     }
 
     .buttons {
@@ -199,24 +213,26 @@
     </nav>
   </header>
 
-  <!-- Bagian Hero -->
+  <!-- 🔹 HERO -->
   <div class="hero">
     <h1>TWNAS XXXV 2025</h1>
     <p>Website ini berisi informasi dan panduan seputar TWNAS XXXV.</p>
   </div>
 
-  <!-- Konten -->
-  <section>
+  <!-- 🔹 SECTION 1 -->
+  <section class="about">
     <h2>✨ Tentang Kami</h2>
     <p>Kami berfokus pada pengembangan website modern, interaktif, dan responsif.</p>
   </section>
 
-  <section>
+  <!-- 🔹 SECTION 2 -->
+  <section class="projects">
     <h2>🚀 Proyek Kami</h2>
     <p>Berbagai proyek kreatif yang telah kami buat dengan teknologi terkini.</p>
   </section>
 
-  <section>
+  <!-- 🔹 SECTION 3 -->
+  <section class="contact">
     <h2>📞 Contact Person</h2>
     <p>Silahkan hubungi nomor dibawah ini jika butuh bantuan!</p>
     <div class="buttons">
