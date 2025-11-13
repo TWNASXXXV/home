@@ -440,22 +440,37 @@
 
         /* ===== POPUP ===== */
         .popup-image-content {
-    max-width: 650px; /* Lebarkan sedikit max-width untuk menampung gambar */
-    padding: 20px;
+    max-width: 900px; 
+    width: 90%;
+    padding: 30px;
+}
+
+.popup-scroll-container {
+    /* Wadah yang dapat di-scroll untuk gambar */
+    max-height: 70vh; /* Batasi tinggi maksimum wadah */
+    overflow-y: auto; /* Aktifkan vertical scrollbar */
+    margin-top: 15px;
+    padding: 10px; /* Tambahkan sedikit padding agar scrollbar tidak menempel */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
 }
 
 .popup-logo-image {
-    max-width: 100%; /* Membuat gambar responsif */
+    max-width: 100%; /* Membuat gambar responsif terhadap container */
     height: auto;
-    border-radius: 8px;
-    margin-top: 15px;
+    display: block;
+    border-radius: 6px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsif untuk layar kecil */
-@media (max-width: 700px) {
+@media (max-width: 950px) {
     .popup-image-content {
-        max-width: 90%;
+        max-width: 95%;
+    }
+    .popup-scroll-container {
+        max-height: 75vh;
     }
 }
         .popup {
@@ -617,9 +632,12 @@
     <div class="popup-content popup-image-content">
         <span class="popup-close" id="closePopupFilosofi">&times;</span>
         <h2>Filosofi Logo TWNAS XXXV</h2>
-        <img src="filosofi_logo.png" alt="Filosofi Logo TWNAS" class="popup-logo-image">
+        
+        <div class="popup-scroll-container">
+            <img src="filosofi_logo.png" alt="Filosofi Logo TWNAS" class="popup-logo-image">
+        </div>
         <p style="margin-top: 15px; font-size: 0.9em; color: #666;">
-            Penjelasan detail makna logo akan segera diupdate.
+            Informasi logo ini ditampilkan dengan ukuran penuh dan dapat di-scroll.
         </p>
     </div>
 </div>
