@@ -212,113 +212,194 @@
       .center-logo { max-width: 280px; }
     }
 
-    /* ===== PAGE 3 - MODIFIKASI ===== */
+    /* ===== PAGE 3 - MODIFIKASI FINAL ===== */
 .page3 {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 100px 20px; /* Tambah padding vertikal */
-  background: linear-gradient(180deg, #f0f8ff, #ffffff); /* Gradasi background lembut */
-  color: #2c3e50; /* Warna teks lebih gelap agar kontras */
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(180deg, #f0f8ff, #ffffff);
+    color: #2c3e50;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
 }
 
-.page3.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.page3.visible { opacity: 1; transform: translateY(0); }
 
 .page3-title {
-  font-size: 3.2em; /* Sedikit lebih besar */
-  font-weight: 700;
-  margin-bottom: 10px; /* Kurangi jarak bawah */
-  color: #34495e; /* Warna lebih gelap */
-  letter-spacing: 1px; /* Tambah jarak antar huruf */
+    font-size: 3.2em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #34495e;
+    letter-spacing: 1px;
 }
 
 .page3-subtitle {
-  font-size: 1.8em; /* Sedikit lebih besar */
-  font-weight: 600;
-  color: #e67e22; /* Ubah ke warna oranye yang lebih cerah, cocok dengan gradasi */
-  margin-bottom: 50px; /* Tambah jarak bawah untuk pemisah */
-  max-width: 800px;
-  line-height: 1.4;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #e67e22;
+    margin-bottom: 50px;
+    max-width: 800px;
+    line-height: 1.4;
 }
 
 .page3-content {
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Pusat secara vertikal */
-  gap: 60px; /* Tambah jarak antar kolom */
-  flex-wrap: wrap;
-  max-width: 1100px; /* Lebarkan sedikit max-width */
-  margin-top: 30px; /* Tambah jarak dari subtitle */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Kunci: Rata atas untuk memposisikan logo lebih tinggi */
+    gap: 60px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin-top: 30px;
+    text-align: left; /* Teks konten rata kiri */
 }
 
-.page3-left,
-.page3-right {
-  flex: 1;
-  min-width: 300px; /* Tambah min-width */
-  max-width: 480px; /* Sesuaikan max-width */
-  text-align: left; /* Teks rata kiri untuk keterbacaan yang lebih baik */
-  padding: 25px; /* Tambah padding */
-  background: #ffffff; /* Latar belakang putih untuk kontras */
-  border-radius: 15px; /* Sedikit lebih membulat */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Shadow yang lebih lembut dan menyebar */
-  transition: all 0.3s ease;
+/* Kiri: Logo & Tombol */
+.page3-left {
+    flex: 0 0 auto; /* Tidak mengembang, hanya selebar konten */
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 0; /* Hapus padding-top */
 }
 
-.page3-left:hover, .page3-right:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+.page3-logo-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    margin-bottom: 25px; /* Jarak antara logo dan tombol */
 }
 
 .page3-logo {
-  max-width: 100%; /* Pastikan logo tidak melebihi lebar kontainer */
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Shadow sedikit lebih gelap untuk logo */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: block; /* Agar margin auto bekerja */
-  margin: 0 auto; /* Tengah logo di dalam div */
+    max-width: 280px;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    display: block;
+    object-fit: contain;
 }
 
-.page3-logo:hover {
-  transform: scale(1.03); /* Sedikit membesar saat hover */
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+.page3-logo:hover { transform: scale(1.05); }
+
+.page3-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 280px; /* Batasi lebar tombol */
 }
 
-/* teks tema & tujuan */
+.page3-btn {
+    display: block;
+    padding: 12px 20px;
+    background: linear-gradient(45deg, #ff6b35, #e67e22); /* Warna oranye/merah */
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.page3-btn:hover {
+    background: linear-gradient(45deg, #e67e22, #ff6b35);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+}
+
+
+/* Kanan: Tema & Tujuan */
+.page3-right {
+    flex: 1;
+    min-width: 400px;
+    max-width: 600px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
 .page3-right h3 {
-  color: #e67e22; /* Sesuaikan warna judul sub-bagian */
-  margin-bottom: 15px; /* Tambah jarak bawah */
-  font-size: 1.6em; /* Sedikit lebih besar */
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-bottom: 2px solid rgba(230, 126, 34, 0.3); /* Garis bawah elegan */
-  padding-bottom: 8px; /* Jarak dari garis bawah */
-  margin-top: 25px; /* Jarak dari atas kotak */
+    color: #e67e22;
+    margin-bottom: 15px;
+    font-size: 1.6em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid rgba(230, 126, 34, 0.3);
+    padding-bottom: 8px;
+    margin-top: 25px;
 }
 
-.page3-right h3:first-of-type { /* Untuk judul "Tema Kegiatan" pertama */
-    margin-top: 0;
+.page3-right h3:first-of-type { margin-top: 0; }
+
+.page3-right .theme-text {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #34495e;
+    line-height: 1.8;
+    margin-bottom: 25px;
 }
 
-.page3-right p {
-  font-size: 1.05em; /* Sedikit lebih besar untuk keterbacaan */
-  line-height: 1.9; /* Tambah line-height untuk kenyamanan membaca */
-  color: #34495e; /* Warna teks isi */
-  margin-bottom: 15px; /* Jarak antar paragraf */
+/* Styling Khusus untuk Poin 1, 2, 3, 4 (Daftar Tujuan) */
+.page3-right ul {
+    list-style: none; /* Hapus list style default */
+    padding: 0;
+    margin: 0;
 }
 
-.page3-right p:last-of-type {
-    margin-bottom: 0; /* Hapus margin bawah paragraf terakhir */
+.page3-right ul li {
+    font-size: 1.05em;
+    line-height: 1.9;
+    color: #34495e;
+    margin-bottom: 15px;
+    padding-left: 20px; /* Ruang untuk penanda kustom */
+    position: relative;
+}
+
+/* Penanda Angka Kustom (1, 2, 3, 4) */
+.page3-right ul li::before {
+    content: counter(li); /* Menggunakan counter untuk angka */
+    counter-increment: li;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 700;
+    color: #ff6b35; /* Warna penanda */
+    font-size: 1.1em;
+    margin-right: 10px;
+}
+/* Reset counter */
+.page3-right h3[id="tujuan"] + ul { counter-reset: li; }
+
+
+/* Responsive */
+@media (max-width: 950px) {
+    .page3-content { flex-direction: column; align-items: center; gap: 30px; }
+    .page3-left { min-width: unset; max-width: 90%; }
+    .page3-right { min-width: unset; max-width: 90%; text-align: left; }
+    .page3-logo-container { padding: 15px; }
+    .page3-logo { max-width: 220px; }
+    .page3-buttons { max-width: 250px; }
+}
+
+@media (max-width: 500px) {
+    .page3-title { font-size: 2.5em; }
+    .page3-subtitle { font-size: 1.2em; margin-bottom: 30px; }
+    .page3-right h3 { font-size: 1.4em; }
+    .page3-right { padding: 20px; }
+    .page3-btn { padding: 10px 15px; font-size: 0.9em; }
 }
 
 
@@ -492,28 +573,36 @@
     </div>
   </section>
 
-<!-- ===== PAGE 3 ===== -->
-<section class="page3" id="page3">
-  <h2 class="page3-title">TWNAS XXXV</h2>
-  <h3 class="page3-subtitle">TEMU WICARA NASIONAL FKMTSI XXXV KALIMANTAN</h3>
+<section class="page3" id="info">
+    <h2 class="page3-title">TWNAS XXXV</h2>
+    <h3 class="page3-subtitle">TEMU WICARA NASIONAL FKMTSI XXXV KALIMANTAN</h3>
 
-  <div class="page3-content">
-    <div class="page3-left">
-      <img src="logo.png" alt="Logo TWNAS" class="page3-logo">
-    </div>
-    <div class="page3-right">
-      <h3>Tema Kegiatan</h3>
-      <p>Mengenalkan Infrastruktur Inovatif Ibu Kota Nusantara (IKN) Untuk Kemajuan Pembangunan Negeri"</p>
+    <div class="page3-content">
+        <div class="page3-left">
+            <div class="page3-logo-container">
+                <img src="logo.png" alt="Logo TWNAS Kalimantan" class="page3-logo">
+            </div>
+            
+            <div class="page3-buttons">
+                <a href="#" class="page3-btn" onclick="alert('Halaman Filosofi Logo belum tersedia!')">Filosofi Logo</a>
+                <a href="#" class="page3-btn" onclick="alert('Halaman Perjalanan TWNAS belum tersedia!')">Perjalanan TWNAS</a>
+                <a href="#" class="page3-btn" onclick="alert('Halaman Buku Panduan belum tersedia!')">Buku Panduan</a>
+            </div>
+        </div>
+        
+        <div class="page3-right">
+            <h3>Tema Kegiatan</h3>
+            <p class="theme-text">Mengenalkan Infrastruktur Inovatif Ibu Kota Nusantara (IKN) Untuk Kemajuan Pembangunan Negeri</p>
 
-      <h3>Tujuan</h3>
-      <p>
-        1. Memperoleh pengetahuan mengenai inovasi terbaru yang ada di dunia konstruksi.<br>
-        2. Menjalin hubungan dan kerjasama yang erat antara Program studi Teknik Sipil Universitas Se-WiIayah X Kalimantan dengan Perguruan Tinggi Teknik Sipil Se-Indonesia.<br>
-        3. Memperoleh informasi mengenai perkembangan ilmu pengetahuan dan teknologi informasi terutama dalam penerapannya dalam dunia industri
-        4. Mempersiapkan mahasiswa teknik sipil sebagai lulusan yang mampu menghadapi pasca—bebas dan globalisasi dengan membentuk kepercayaan diri dalam proses penyesuaian di lingkungan kerjanya
-      </p>
+            <h3 id="tujuan">Tujuan</h3>
+            <ul>
+                <li>Memperoleh pengetahuan mengenai inovasi terbaru yang ada di dunia konstruksi.</li>
+                <li>Menjalin hubungan dan kerjasama yang erat antara Program studi Teknik Sipil Universitas Se-WiIayah X Kalimantan dengan Perguruan Tinggi Teknik Sipil Se-Indonesia.</li>
+                <li>Memperoleh informasi mengenai perkembangan ilmu pengetahuan dan teknologi informasi terutama dalam penerapannya dalam dunia industri.</li>
+                <li>Mempersiapkan mahasiswa teknik sipil sebagai lulusan yang mampu menghadapi pasca—bebas dan globalisasi dengan membentuk kepercayaan diri dalam proses penyesuaian di lingkungan kerjanya.</li>
+            </ul>
+        </div>
     </div>
-  </div>
 </section>
 
 
