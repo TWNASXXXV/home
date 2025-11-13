@@ -438,19 +438,18 @@
             font-size: 0.9em;
         }
 
-        /* ===== POPUP Filosofi Logo ===== */
-        /* ===== POPUP IMAGE SPECIFIC STYLES (MODIFIED for wider zoom) ===== */
+        /* ===== POPUP Filosofi Logo (FINAL ADJUSTMENT untuk ZOOM & SCROLL) ===== */
 .popup-image-content {
-    /* Meningkatkan lebar popup dari 900px menjadi 1000px atau lebih besar */
-    max-width: 1500px; 
-    width: 95%; /* Menggunakan 95% agar lebih adaptif */
+    /* Lebar Maksimum untuk efek 'ngezoom' (Sangat Besar) */
+    max-width: 1200px; 
+    width: 95%; /* Ambil 95% dari lebar viewport */
     padding: 30px;
 }
 
-/* Pertahankan gaya scroll container agar gambar tetap dapat di-scroll secara vertikal */
 .popup-scroll-container {
-    max-height: 70vh; 
-    overflow-y: auto;
+    /* Wadah Scroll Vertikal */
+    max-height: 80vh; /* Batasi tinggi maksimum (80% dari viewport height) */
+    overflow-y: auto; /* Aktifkan vertical scrollbar */
     margin-top: 15px;
     padding: 10px;
     border: 1px solid #ddd;
@@ -458,27 +457,25 @@
     background: #f9f9f9;
 }
 
-/* Pastikan gambar di dalamnya responsif */
 .popup-logo-image {
-    max-width: 100%; 
+    /* PENTING: Memaksa gambar mengisi lebar kontainer penuh */
+    width: 100%;
+    max-width: 100%; 
     height: auto;
     display: block;
     border-radius: 6px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Penyesuaian responsif tetap penting untuk layar kecil */
-@media (max-width: 1050px) {
+/* Penyesuaian responsif untuk layar kecil */
+@media (max-width: 1300px) {
     .popup-image-content {
-        /* Memastikan popup tidak terlalu besar pada layar menengah */
         max-width: 90%; 
     }
 }
-
 @media (max-width: 700px) {
     .popup-image-content {
-        /* Untuk ponsel, pastikan lebar tetap wajar */
-        max-width: 95%;
+        padding: 20px;
     }
     .popup-scroll-container {
         max-height: 75vh;
@@ -643,7 +640,7 @@
     <div class="popup-content popup-image-content">
         <span class="popup-close" id="closePopupFilosofi">&times;</span>
         <h2>Filosofi Logo TWNAS XXXV</h2>
-        
+         
         <div class="popup-scroll-container">
             <img src="filosofi_logo.png" alt="Filosofi Logo TWNAS" class="popup-logo-image">
         </div>
