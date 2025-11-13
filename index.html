@@ -438,35 +438,46 @@
             font-size: 0.9em;
         }
 
-        /* ===== POPUP ===== */
-        .popup-image-content {
-    max-width: 900px; 
-    width: 90%;
+        /* ===== POPUP Filosofi Logo ===== */
+        /* ===== POPUP IMAGE SPECIFIC STYLES (MODIFIED for wider zoom) ===== */
+.popup-image-content {
+    /* Meningkatkan lebar popup dari 900px menjadi 1000px atau lebih besar */
+    max-width: 1000px; 
+    width: 95%; /* Menggunakan 95% agar lebih adaptif */
     padding: 30px;
 }
 
+/* Pertahankan gaya scroll container agar gambar tetap dapat di-scroll secara vertikal */
 .popup-scroll-container {
-    /* Wadah yang dapat di-scroll untuk gambar */
-    max-height: 70vh; /* Batasi tinggi maksimum wadah */
-    overflow-y: auto; /* Aktifkan vertical scrollbar */
+    max-height: 70vh; 
+    overflow-y: auto;
     margin-top: 15px;
-    padding: 10px; /* Tambahkan sedikit padding agar scrollbar tidak menempel */
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background: #f9f9f9;
 }
 
+/* Pastikan gambar di dalamnya responsif */
 .popup-logo-image {
-    max-width: 100%; /* Membuat gambar responsif terhadap container */
+    max-width: 100%; 
     height: auto;
     display: block;
     border-radius: 6px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsif untuk layar kecil */
-@media (max-width: 950px) {
+/* Penyesuaian responsif tetap penting untuk layar kecil */
+@media (max-width: 1050px) {
     .popup-image-content {
+        /* Memastikan popup tidak terlalu besar pada layar menengah */
+        max-width: 90%; 
+    }
+}
+
+@media (max-width: 700px) {
+    .popup-image-content {
+        /* Untuk ponsel, pastikan lebar tetap wajar */
         max-width: 95%;
     }
     .popup-scroll-container {
