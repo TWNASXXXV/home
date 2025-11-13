@@ -366,6 +366,34 @@
     </div>
   </div>
 
+  <!-- 🎵 Musik Latar Belakang -->
+<audio id="bgMusic" autoplay loop muted>
+  <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  // Dapatkan elemen audio
+  const bgMusic = document.getElementById('bgMusic');
+
+  // Set volume awal (0.2 = 20% dari volume penuh)
+  bgMusic.volume = 0.2;
+
+  // Pastikan musik tetap looping otomatis
+  bgMusic.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+  });
+
+  // Saat user pertama kali klik di halaman, unmute dan play musik
+  document.addEventListener('click', function() {
+    if (bgMusic.muted) {
+      bgMusic.muted = false;
+      bgMusic.play();
+    }
+  }, { once: true });
+</script>
+
+
   <script>
     const header = document.getElementById("header");
     window.addEventListener("scroll", () => header.classList.toggle("scrolled", window.scrollY > 50));
