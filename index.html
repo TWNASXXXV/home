@@ -15,64 +15,40 @@
       color: #333;
       overflow-x: hidden;
       background: url('background.png') center/cover no-repeat fixed;
-      background-attachment: fixed;
     }
 
     /* ===== HEADER ===== */
     header {
       position: fixed;
-      top: 0;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      top: 0; width: 100%;
+      display: flex; align-items: center; justify-content: space-between;
       padding: 18px 60px;
       background: rgba(255, 255, 255, 0);
       transition: all 0.4s ease;
       z-index: 1000;
     }
-
-    header.scrolled {
-      background: rgba(255,255,255,0.95);
-      color: #111;
-    }
+    header.scrolled { background: rgba(255,255,255,0.95); color: #111; }
     header.scrolled a { color: #111; }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
+    .logo { display: flex; align-items: center; gap: 18px; }
     .logo img { width: 90px; transition: 0.3s; }
     header.scrolled .logo img { width: 65px; }
 
     .logo-text h1 { font-size: 1.5em; font-weight: 700; color: #fff; transition: color 0.4s; }
     .logo-text p { font-size: 0.9em; color: #fff; opacity: 0.9; transition: color 0.4s; }
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 35px;
-    }
+    nav { display: flex; align-items: center; gap: 35px; }
     nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95em;
-      transition: 0.3s;
+      color: white; text-decoration: none; font-weight: 500;
+      font-size: 0.95em; transition: 0.3s;
     }
     nav a:hover { color: #ffb185; }
 
     .btn-registrasi {
       background: linear-gradient(135deg, #ff6b35, #ff934f);
-      color: white;
-      padding: 10px 25px;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: 0.3s;
+      color: white; padding: 10px 25px;
+      border: none; border-radius: 25px; cursor: pointer;
+      font-weight: 600; transition: 0.3s;
     }
     .btn-registrasi:hover {
       transform: scale(1.05);
@@ -86,43 +62,33 @@
     /* ===== HERO ===== */
     .hero {
       height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 100px 20px 20px;
-      color: white;
-      position: relative;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 100px 20px 20px;
+      color: white; position: relative;
     }
     .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 0;
+      content: ""; position: absolute; inset: 0;
+      background: rgba(0, 0, 0, 0.6); z-index: 0;
     }
     .hero h1, .hero h2, .hero p { position: relative; z-index: 1; }
     .hero h1 { font-size: 3em; font-weight: 700; margin-bottom: 15px; animation: fadeInDown 1s; }
     .hero h2 { font-size: 2em; font-weight: 600; margin-bottom: 15px; animation: fadeInDown 1s; }
     .hero p { max-width: 700px; font-size: 1.2em; opacity: 0.9; animation: fadeInUp 1s; }
 
-    /* ===== SECTION ANIMATION ===== */
+    /* ===== ANIMASI SECTION ===== */
     section {
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
       text-align: center;
       padding: 80px 20px;
-      opacity: 0;
-      transform: translateY(50px);
+      opacity: 0; transform: translateY(50px);
       transition: all 1s ease;
     }
     section.visible { opacity: 1; transform: translateY(0); }
 
-    /* ===== ABOUT (TENTANG KAMI) ===== */
+    /* ===== ABOUT ===== */
     .about {
       position: relative;
       color: #fff;
@@ -130,7 +96,7 @@
       padding: 100px 40px;
     }
 
-    /* ✅ Background bergulir otomatis */
+    /* background slideshow */
     .about::before {
       content: "";
       position: absolute;
@@ -146,21 +112,20 @@
       66% { background-image: url('bg3.jpg'); }
       100% { background-image: url('bg1.jpg'); }
     }
-
     .about::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.55);
       z-index: 0;
     }
 
     .about h2 {
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
       font-size: 2.5em;
       color: #FFD700;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
+      text-align: center;
     }
 
     .about-container {
@@ -171,68 +136,81 @@
       align-items: flex-start;
       gap: 40px;
       flex-wrap: wrap;
-      color: #fff;
     }
 
     .about-left, .about-right {
       flex: 1;
       min-width: 280px;
-      max-width: 400px;
+      max-width: 420px;
       text-align: justify;
-      background: rgba(255,255,255,0.1);
-      padding: 20px;
-      border-radius: 15px;
-      backdrop-filter: blur(3px);
+      background: rgba(255,255,255,0.08);
+      padding: 24px;
+      border-radius: 14px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+      color: #fff;
+    }
+
+    .about h3 {
+      color: #FFD700;
+      margin-bottom: 12px;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .about p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.95);
     }
 
     .about-center {
       flex: 0 0 auto;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      gap: 12px;
+      padding-top: 6px;
     }
 
-.about-center img {
-  width: auto;
-  height: auto;
-  max-width: 200px;              
-  border-radius: 15px;           
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5), 
-              0 0 60px rgba(255, 255, 255, 0.2); 
-  background-color: rgba(255, 255, 255, 0.05);  
-  padding: 8px;               
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .center-logo {
+      width: auto;
+      height: auto;
+      max-width: 220px;
+      border-radius: 12px;
+      padding: 8px;
+      background: rgba(255,255,255,0.03);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.5), 0 0 30px rgba(255,215,0,0.12);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      object-fit: contain;
+    }
+    .center-logo:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.55), 0 0 50px rgba(255,215,0,0.18);
+    }
 
-.about-center img:hover {
-  transform: scale(1.05);       
-  box-shadow: 0 0 40px rgba(255, 215, 0, 0.7), 
-              0 0 80px rgba(255, 255, 255, 0.3);
-}
-    
-    .instagram-link {
-  display: inline-block;
-  margin-top: 15px;
-  text-align: center;
-}
+    .instagram-link { display: inline-block; margin-top: 6px; }
+    .instagram-logo {
+      width: 42px; height: 42px;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: rgba(255,255,255,0.03);
+      padding: 6px;
+    }
+    .instagram-logo:hover {
+      transform: translateY(-4px) scale(1.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.55), 0 0 30px rgba(255, 100, 150, 0.12);
+    }
 
-.instagram-logo {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
-}
-
-.instagram-logo:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
-}
-
-
-
-    .about h3 { color: #FFD700; margin-bottom: 15px; font-size: 22px; }
-    .about p { font-size: 15px; line-height: 1.8; }
+    /* responsive */
+    @media (max-width: 900px) {
+      .about-container { flex-direction: column; align-items: center; }
+      .about-left, .about-right { max-width: 720px; text-align: left; }
+      .center-logo { max-width: 280px; }
+    }
 
     /* ===== INFO ===== */
     .twnas-info {
@@ -241,51 +219,36 @@
     }
 
     /* ===== PENUTUP ===== */
-    .closing {
-      position: relative;
-      color: white;
-    }
+    .closing { position: relative; color: white; }
     .closing::before {
       content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 0;
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.5); z-index: 0;
     }
     .closing h2, .closing p { position: relative; z-index: 1; }
 
     /* ===== FOOTER ===== */
     footer {
-      background: #1e3c72;
-      color: white;
-      text-align: center;
-      padding: 25px 10px;
+      background: #1e3c72; color: white;
+      text-align: center; padding: 25px 10px;
       font-size: 0.9em;
     }
 
     /* ===== POPUP ===== */
     .popup {
-      position: fixed;
-      top: 0; left: 0;
+      position: fixed; top: 0; left: 0;
       width: 100%; height: 100%;
       background: rgba(0,0,0,0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: 0.4s ease;
-      z-index: 9999;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: 0.4s ease; z-index: 9999;
     }
     .popup.active { opacity: 1; pointer-events: auto; }
 
     .popup-content {
-      background: white;
-      border-radius: 15px;
-      padding: 30px 40px;
-      text-align: center;
-      max-width: 400px;
-      position: relative;
+      background: white; border-radius: 15px;
+      padding: 30px 40px; text-align: center;
+      max-width: 400px; position: relative;
       animation: scaleIn 0.4s ease;
     }
     @keyframes scaleIn {
@@ -295,13 +258,7 @@
     .popup-close { position: absolute; top: 10px; right: 15px; font-size: 1.5em; color: #666; cursor: pointer; }
     .popup-close:hover { color: #ff6b35; transform: scale(1.1); }
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 900px) {
-      .about-container { flex-direction: column; align-items: center; }
-      .about-left, .about-right { max-width: 600px; text-align: left; }
-      .about-center img { margin: 40px 0; }
-    }
-
+    /* ===== RESPONSIVE NAV ===== */
     @media (max-width: 768px) {
       header { padding: 12px 30px; }
       .logo img { width: 70px; }
@@ -310,11 +267,8 @@
       .hero p { font-size: 1em; }
       .menu-toggle { display: flex; }
       nav {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        flex-direction: column;
+        position: absolute; top: 70px; right: 0;
+        width: 100%; flex-direction: column;
         background: rgba(0,0,0,0.9);
         padding: 20px 0;
         transform: translateY(-250%);
@@ -352,46 +306,42 @@
     <p>Website resmi acara Temu Wicara Nasional FKMTSI ke-35 yang memuat seluruh informasi dan keperluan teknis selama kegiatan berlangsung.</p>
   </div>
 
-  <!-- ✅ Section Tentang Kami dengan logo di tengah -->
+  <!-- ===== SECTION ABOUT ===== -->
   <section class="about" id="about">
     <h2>Tentang Kami</h2>
     <div class="about-container">
       <div class="about-left">
         <h3>APA ITU FKMTSI?</h3>
         <p>
-          Forum Komunikasi Mahasiswa Teknik Sipil Indonesia (FKMTSI) adalah organisasi kemahasiswaan Teknik Sipil atau organisasi kemahasiswaan 
-          pada program studi Teknik Sipil yang diakui oleh masing-masing Perguruan Tinggi Se-Indonesia. FKMTSI dideklarasikan pada tanggal 24 Desember 1987 
-          di Bandung dan disahkan pada tanggal 1 Maret 1989 di Jakarta dan untuk waktu yang tidak ditentukan. FKMTSI berfungsi sebagai wadah komunikasi.
+          Forum Komunikasi Mahasiswa Teknik Sipil Indonesia (FKMTSI) adalah organisasi kemahasiswaan Teknik Sipil pada program studi Teknik Sipil yang diakui oleh masing-masing Perguruan Tinggi se-Indonesia. Dideklarasikan pada 24 Desember 1987 di Bandung dan disahkan 1 Maret 1989 di Jakarta. FKMTSI berfungsi sebagai wadah komunikasi.
         </p>
       </div>
 
       <div class="about-center">
-        <img src="about.jpg" alt="Logo FKMTSI" />
-      </div>
-
-
-        <!-- 🔗 Logo Instagram -->
+        <img src="about.jpg" alt="Logo FKMTSI" class="center-logo" />
         <a href="https://www.instagram.com/sipil_indonesia" target="_blank" class="instagram-link">
           <img src="instagram.png" alt="Instagram" class="instagram-logo" />
         </a>
       </div>
 
-
       <div class="about-right">
         <h3>Tujuan</h3>
         <p>
-          Tujuan FKMTSI Menyatukan persepsi dan pemikiran tentang Teknik Sipil Indonesia, mengambil bagian dan berperan aktif dalam setiap usaha pembangunan nasional,
-          meningkatkan kiprah Mahasiswa Teknik Sipil untuk mewujudkan sifat mandiri dan profesional.
+          1. Menyatukan persepsi dan pemikiran tentang Teknik Sipil Indonesia.<br>
+          2. Mengambil bagian dan berperan aktif dalam pembangunan nasional.<br>
+          3. Meningkatkan kiprah Mahasiswa Teknik Sipil untuk mewujudkan sifat mandiri dan profesional.
         </p>
       </div>
     </div>
   </section>
 
+  <!-- ===== INFO ===== -->
   <section class="twnas-info" id="info">
     <h2>📣 Informasi Kegiatan</h2>
     <p>Segala informasi terbaru mengenai TWNAS XXXV 2025 akan diumumkan di halaman ini. Tetap pantau ya!</p>
   </section>
 
+  <!-- ===== PENUTUP ===== -->
   <section class="closing">
     <h2>Terima Kasih Telah Mengunjungi</h2>
     <p>Sampai jumpa di TWNAS XXXV 2025 - Wilayah X!</p>
@@ -399,7 +349,7 @@
 
   <footer>© 2025 TWNAS XXXV | FKMTSI Indonesia. All Rights Reserved.</footer>
 
-  <!-- POPUP -->
+  <!-- ===== POPUP ===== -->
   <div class="popup" id="popup">
     <div class="popup-content">
       <span class="popup-close" id="closePopup">&times;</span>
