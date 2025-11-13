@@ -212,7 +212,7 @@
       .center-logo { max-width: 280px; }
     }
 
-    /* ===== PAGE 3 ===== */
+    /* ===== PAGE 3 - MODIFIKASI ===== */
 .page3 {
   min-height: 100vh;
   display: flex;
@@ -220,78 +220,160 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 80px 20px;
-  background: #ffffff;
-  color: #333;
-  opacity: 0; transform: translateY(50px);
+  padding: 100px 20px; /* Tambah padding vertikal */
+  background: linear-gradient(180deg, #f0f8ff, #ffffff); /* Gradasi background lembut */
+  color: #2c3e50; /* Warna teks lebih gelap agar kontras */
+  opacity: 0;
+  transform: translateY(50px);
   transition: all 1s ease;
 }
 
-.page3.visible { opacity: 1; transform: translateY(0); }
+.page3.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .page3-title {
-  font-size: 3em;
+  font-size: 3.2em; /* Sedikit lebih besar */
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* Kurangi jarak bawah */
+  color: #34495e; /* Warna lebih gelap */
+  letter-spacing: 1px; /* Tambah jarak antar huruf */
 }
 
 .page3-subtitle {
-  font-size: 1.5em;
+  font-size: 1.8em; /* Sedikit lebih besar */
   font-weight: 600;
-  color: #FFD700; /* kuning */
-  margin-bottom: 40px;
+  color: #e67e22; /* Ubah ke warna oranye yang lebih cerah, cocok dengan gradasi */
+  margin-bottom: 50px; /* Tambah jarak bawah untuk pemisah */
+  max-width: 800px;
+  line-height: 1.4;
 }
 
 .page3-content {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
+  align-items: center; /* Pusat secara vertikal */
+  gap: 60px; /* Tambah jarak antar kolom */
   flex-wrap: wrap;
-  max-width: 1000px;
+  max-width: 1100px; /* Lebarkan sedikit max-width */
+  margin-top: 30px; /* Tambah jarak dari subtitle */
 }
 
-.page3-left, .page3-right {
+.page3-left,
+.page3-right {
   flex: 1;
-  min-width: 280px;
+  min-width: 300px; /* Tambah min-width */
+  max-width: 480px; /* Sesuaikan max-width */
+  text-align: left; /* Teks rata kiri untuk keterbacaan yang lebih baik */
+  padding: 25px; /* Tambah padding */
+  background: #ffffff; /* Latar belakang putih untuk kontras */
+  border-radius: 15px; /* Sedikit lebih membulat */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Shadow yang lebih lembut dan menyebar */
+  transition: all 0.3s ease;
+}
+
+.page3-left:hover, .page3-right:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .page3-logo {
-  max-width: 250px;
+  max-width: 100%; /* Pastikan logo tidak melebihi lebar kontainer */
+  height: auto;
   border-radius: 12px;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.5);
-  transition: transform 0.25s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Shadow sedikit lebih gelap untuk logo */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block; /* Agar margin auto bekerja */
+  margin: 0 auto; /* Tengah logo di dalam div */
 }
 
 .page3-logo:hover {
-  transform: translateY(-6px) scale(1.02);
+  transform: scale(1.03); /* Sedikit membesar saat hover */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
 }
 
 /* teks tema & tujuan */
 .page3-right h3 {
-  color: #FFD700;
-  margin-bottom: 12px;
-  font-size: 20px;
+  color: #e67e22; /* Sesuaikan warna judul sub-bagian */
+  margin-bottom: 15px; /* Tambah jarak bawah */
+  font-size: 1.6em; /* Sedikit lebih besar */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid rgba(230, 126, 34, 0.3); /* Garis bawah elegan */
+  padding-bottom: 8px; /* Jarak dari garis bawah */
+  margin-top: 25px; /* Jarak dari atas kotak */
+}
+
+.page3-right h3:first-of-type { /* Untuk judul "Tema Kegiatan" pertama */
+    margin-top: 0;
 }
 
 .page3-right p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #333;
+  font-size: 1.05em; /* Sedikit lebih besar untuk keterbacaan */
+  line-height: 1.9; /* Tambah line-height untuk kenyamanan membaca */
+  color: #34495e; /* Warna teks isi */
+  margin-bottom: 15px; /* Jarak antar paragraf */
 }
+
+.page3-right p:last-of-type {
+    margin-bottom: 0; /* Hapus margin bawah paragraf terakhir */
+}
+
 
 /* responsive */
 @media (max-width: 900px) {
-  .page3-content { flex-direction: column; align-items: center; }
-  .page3-logo { max-width: 200px; margin-bottom: 20px; }
-  .page3-right { text-align: center; }
+  .page3-title {
+    font-size: 2.5em;
+  }
+  .page3-subtitle {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+  .page3-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Kurangi gap untuk mobile */
+  }
+  .page3-left,
+  .page3-right {
+    max-width: 90%; /* Gunakan persentase lebar untuk fleksibilitas */
+    min-width: unset; /* Hapus min-width tetap */
+    text-align: center; /* Tengah teks untuk mobile */
+  }
+  .page3-logo {
+    max-width: 220px; /* Sesuaikan ukuran logo untuk mobile */
+    margin-bottom: 20px;
+  }
+  .page3-right h3 {
+    font-size: 1.4em;
+    text-align: center; /* Tengah judul untuk mobile */
+    border-bottom: none; /* Hapus garis bawah di mobile */
+    padding-bottom: 0;
+    margin-top: 20px;
+  }
+  .page3-right p {
+    font-size: 1em;
+    text-align: center; /* Tengah paragraf untuk mobile */
+  }
 }
 
-    /* ===== INFO ===== */
-    .twnas-info {
-      background: linear-gradient(135deg, #ffffff, #e3f2fd);
-      color: #1e3c72;
-    }
+/* Penyesuaian untuk tampilan yang sangat kecil */
+@media (max-width: 500px) {
+  .page3-title {
+    font-size: 2em;
+  }
+  .page3-subtitle {
+    font-size: 1em;
+  }
+  .page3-left, .page3-right {
+    padding: 20px;
+  }
+  .page3-logo {
+    max-width: 180px;
+  }
+}
 
     /* ===== PENUTUP ===== */
     .closing { position: relative; color: white; }
