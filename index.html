@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -10,21 +9,19 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; } /* ✅ Smooth scroll */
 
-    /* ===================== BODY BACKGROUND UTAMA ===================== */
     body {
       font-family: 'Poppins', sans-serif;
       color: #333;
       overflow-x: hidden;
       background: url('background.png') center/cover no-repeat fixed;
-      background-attachment: fixed; /* tetap di tempat */
+      background-attachment: fixed;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
     }
 
-    /* HEADER */
     header {
       position: fixed;
       top: 0;
@@ -37,10 +34,12 @@
       transition: all 0.4s ease;
       z-index: 1000;
     }
+
     header.scrolled {
       background: rgba(255,255,255,0.95);
       color: #111;
     }
+
     header.scrolled a { color: #111; }
 
     .logo {
@@ -105,7 +104,6 @@
       box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
     }
 
-    /* HAMBURGER MENU */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -122,7 +120,6 @@
 
     header.scrolled .menu-toggle span { background: #222; }
 
-    /* HERO */
     .hero {
       height: 100vh;
       display: flex;
@@ -139,7 +136,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.6); /* efek gelap */
+      background: rgba(0, 0, 0, 0.6);
       z-index: 0;
     }
 
@@ -169,7 +166,6 @@
       animation: fadeInUp 1s ease forwards;
     }
 
-    /* SECTION */
     section {
       min-height: 100vh;
       display: flex;
@@ -182,15 +178,30 @@
       transform: translateY(50px);
       transition: all 1s ease;
     }
+
     section.visible { opacity: 1; transform: translateY(0); }
 
-    /* Halaman 2 & 3 sama warna */
     .about, .twnas-info {
       background: linear-gradient(135deg, #ffffff, #e3f2fd);
       color: #1e3c72;
     }
 
-    /* HALAMAN 4 (Closing) tanpa background - transparan pakai background utama */
+    /* ✅ Tambahan gaya untuk gambar dan teks */
+    .about img {
+      width: 300px;
+      height: auto;
+      border-radius: 15px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .about .desc {
+      max-width: 700px;
+      font-size: 1.1em;
+      color: #333;
+      line-height: 1.6;
+    }
+
     .closing {
       position: relative;
       color: white;
@@ -202,7 +213,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.5); /* sedikit gelap agar teks jelas */
+      background: rgba(0,0,0,0.5);
       z-index: 0;
     }
 
@@ -220,17 +231,16 @@
       letter-spacing: 0.5px;
     }
 
-    /* Animasi */
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* POPUP */
     .popup {
       position: fixed;
       top: 0; left: 0;
@@ -244,6 +254,7 @@
       transition: 0.4s ease;
       z-index: 9999;
     }
+
     .popup.active { opacity: 1; pointer-events: auto; }
 
     .popup-content {
@@ -273,9 +284,9 @@
       cursor: pointer;
       transition: 0.3s;
     }
+
     .popup-close:hover { color: #ff6b35; transform: scale(1.1); }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
       header { padding: 12px 30px; }
       .logo img { width: 70px; }
@@ -316,8 +327,8 @@
 
     <nav id="nav-menu">
       <a href="#">Home</a>
-      <a href="#">Tentang Kami</a>
-      <a href="#">Informasi</a>
+      <a href="#about">Tentang Kami</a> <!-- ✅ diarahkan ke ID -->
+      <a href="#info">Informasi</a>
       <a href="#">Kontak</a>
       <button class="btn-registrasi" id="popupBtn">Registrasi</button>
     </nav>
@@ -329,12 +340,28 @@
     <p>Website resmi acara Temu Wicara Nasional FKMTSI ke-35 yang memuat seluruh informasi dan keperluan teknis selama kegiatan berlangsung.</p>
   </div>
 
-  <section class="about">
-    <h2>✨ Tentang Kami</h2>
-    <p>Kami berkomitmen menghadirkan wadah inspiratif bagi mahasiswa teknik sipil seluruh Indonesia.</p>
-  </section>
+  <!-- ✅ Section Tentang Kami -->
+<section class="about" id="about">
+  <h2>✨ Tentang Kami</h2>
+  <img src="about.jpg" alt="Foto Kegiatan TWNAS" /> <!-- ✅ Gambar -->
+  <div class="desc">
+    <p>
+      <strong>APA ITU FKMTSI?</strong><br>
+      Forum Komunikasi Mahasiswa Teknik Sipil Indonesia (FKMTSI) adalah organisasi kemahasiswaan Teknik Sipil atau organisasi kemahasiswaan 
+      pada program studi Teknik Sipil yang diakui oleh masing-masing Perguruan Tinggi Se-Indonesia. FKMTSI dideklarasikan pada tanggal 24 Desember 1987 
+      di Bandung dan disahkan pada tanggal 1 Maret 1989 di Jakarta dan untuk waktu yang tidak ditentukan. FKMTSI berfungsi sebagai wadah komunikasi.
+    </p>
 
-  <section class="twnas-info">
+    <p>
+      <strong>Tujuan:</strong><br>
+      Tujuan FKMTSI Menyatukan persepsi dan pemikiran tentang Teknik Sipil Indonesia, mengambil bagian dan berperan aktif dalam 
+      setiap usaha pembangunan nasional, meningkatkan kiprah Mahasiswa Teknik Sipil untuk mewujudkan sifat mandiri dan profesional.
+    </p>
+  </div>
+</section>
+
+
+  <section class="twnas-info" id="info">
     <h2>📣 Informasi Kegiatan</h2>
     <p>Segala informasi terbaru mengenai TWNAS XXXV 2025 akan diumumkan di halaman ini. Tetap pantau ya!</p>
   </section>
@@ -396,4 +423,3 @@
   </script>
 </body>
 </html>
-
