@@ -439,6 +439,25 @@
         }
 
         /* ===== POPUP ===== */
+        .popup-image-content {
+    max-width: 650px; /* Lebarkan sedikit max-width untuk menampung gambar */
+    padding: 20px;
+}
+
+.popup-logo-image {
+    max-width: 100%; /* Membuat gambar responsif */
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 700px) {
+    .popup-image-content {
+        max-width: 90%;
+    }
+}
         .popup {
             position: fixed; top: 0; left: 0;
             width: 100%; height: 100%;
@@ -595,12 +614,15 @@
     </div>
 
     <div class="popup" id="popupFilosofi">
-        <div class="popup-content">
-            <span class="popup-close" id="closePopupFilosofi">&times;</span>
-            <h2>Filosofi Logo TWNAS XXXV</h2>
-            <p>Filosofi logo ini akan menjelaskan makna dari setiap elemen visual yang mewakili semangat FKMTSI dan tuan rumah Kalimantan. Nantikan rilis resminya!</p>
-        </div>
+    <div class="popup-content popup-image-content">
+        <span class="popup-close" id="closePopupFilosofi">&times;</span>
+        <h2>Filosofi Logo TWNAS XXXV</h2>
+        <img src="filosofi_logo.png" alt="Filosofi Logo TWNAS" class="popup-logo-image">
+        <p style="margin-top: 15px; font-size: 0.9em; color: #666;">
+            Penjelasan detail makna logo akan segera diupdate.
+        </p>
     </div>
+</div>
 
     <div class="popup" id="popupPerjalanan">
         <div class="popup-content">
