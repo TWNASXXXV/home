@@ -1,75 +1,73 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TWNAS XXXV COOMING SOON</title>
+  <title>TWNAS XXXV</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    /* ===================== BODY BACKGROUND UTAMA ===================== */
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f9fafc;
       color: #333;
       overflow-x: hidden;
+      background: url('background.png') center/cover no-repeat fixed;
+      background-attachment: fixed; /* tetap di tempat */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
     /* HEADER */
     header {
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
-      background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      color: #fff;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 60px;
-      z-index: 1000;
+      padding: 18px 60px;
+      background: rgba(255, 255, 255, 0);
       transition: all 0.4s ease;
+      z-index: 1000;
     }
-
     header.scrolled {
-      background: rgba(255, 255, 255, 0.85);
-      color: #222;
+      background: rgba(255,255,255,0.95);
+      color: #111;
     }
-
-    header.scrolled nav a,
-    header.scrolled .logo-text h1,
-    header.scrolled .logo-text p {
-      color: #222;
-    }
+    header.scrolled a { color: #111; }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 18px;
     }
 
     .logo img {
-      width: 55px;
-      max-width: 100%;
+      width: 90px;
       height: auto;
+      transition: 0.3s ease;
+    }
+
+    header.scrolled .logo img {
+      width: 65px;
     }
 
     .logo-text h1 {
-      font-size: 1.3em;
+      font-size: 1.5em;
       font-weight: 700;
       color: #fff;
       transition: color 0.4s ease;
     }
 
     .logo-text p {
-      font-size: 0.85em;
+      font-size: 0.9em;
       color: #fff;
       opacity: 0.9;
       transition: color 0.4s ease;
@@ -79,7 +77,6 @@
       display: flex;
       align-items: center;
       gap: 35px;
-      transition: all 0.3s ease;
     }
 
     nav a {
@@ -90,9 +87,7 @@
       transition: 0.3s;
     }
 
-    nav a:hover {
-      color: #ffb185;
-    }
+    nav a:hover { color: #ffb185; }
 
     .btn-registrasi {
       background: linear-gradient(135deg, #ff6b35, #ff934f);
@@ -114,20 +109,18 @@
     .menu-toggle {
       display: none;
       flex-direction: column;
-      justify-content: center;
-      width: 28px;
-      height: 25px;
       cursor: pointer;
       gap: 5px;
-      z-index: 1001;
     }
 
     .menu-toggle span {
-      background: white;
+      width: 28px;
       height: 3px;
-      border-radius: 2px;
+      background: white;
       transition: 0.3s;
     }
+
+    header.scrolled .menu-toggle span { background: #222; }
 
     /* HERO */
     .hero {
@@ -138,8 +131,21 @@
       justify-content: center;
       text-align: center;
       padding: 100px 20px 20px;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      position: relative;
       color: white;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6); /* efek gelap */
+      z-index: 0;
+    }
+
+    .hero h1, .hero p, .hero h2 {
+      position: relative;
+      z-index: 1;
     }
 
     .hero h1 {
@@ -149,14 +155,21 @@
       animation: fadeInDown 1s ease forwards;
     }
 
+    .hero h2 {
+      font-size: 2em;
+      font-weight: 600;
+      margin-bottom: 15px;
+      animation: fadeInDown 1s ease forwards;
+    }
+
     .hero p {
-      max-width: 600px;
+      max-width: 700px;
       font-size: 1.2em;
       opacity: 0.9;
       animation: fadeInUp 1s ease forwards;
     }
 
-    /* SECTION BASE */
+    /* SECTION */
     section {
       min-height: 100vh;
       display: flex;
@@ -165,71 +178,39 @@
       align-items: center;
       text-align: center;
       padding: 80px 20px;
-      transition: all 1s ease;
       opacity: 0;
       transform: translateY(50px);
+      transition: all 1s ease;
     }
+    section.visible { opacity: 1; transform: translateY(0); }
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    section h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-
-    section p {
-      max-width: 650px;
-      font-size: 1.1em;
-      line-height: 1.7;
-      opacity: 0.9;
-    }
-
-    /* Aesthetic background colors */
-    .about {
+    /* Halaman 2 & 3 sama warna */
+    .about, .twnas-info {
       background: linear-gradient(135deg, #ffffff, #e3f2fd);
       color: #1e3c72;
     }
 
-    .projects {
-      background: linear-gradient(135deg, #e3f2fd, #fff0e6);
-      color: #2a5298;
-    }
-
-    .contact {
-      background: linear-gradient(135deg, #fff0e6, #ffe0cc);
-      color: #2a2a2a;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 20px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .btn {
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
+    /* HALAMAN 4 (Closing) tanpa background - transparan pakai background utama */
+    .closing {
+      position: relative;
       color: white;
-      padding: 12px 28px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-      box-shadow: 0 4px 10px rgba(30, 60, 114, 0.3);
+      background: transparent;
+      backdrop-filter: none;
     }
 
-    .btn:hover {
-      background: linear-gradient(135deg, #ff6b35, #ff934f);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+    .closing::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5); /* sedikit gelap agar teks jelas */
+      z-index: 0;
     }
 
-    /* Footer */
+    .closing h2, .closing p {
+      position: relative;
+      z-index: 1;
+    }
+
     footer {
       background: #1e3c72;
       color: white;
@@ -239,97 +220,87 @@
       letter-spacing: 0.5px;
     }
 
+    /* Animasi */
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* === RESPONSIVE === */
-    @media (max-width: 992px) {
-      header {
-        padding: 12px 30px;
-      }
-      nav {
-        gap: 20px;
-      }
-      .hero h1 {
-        font-size: 2.3em;
-      }
-      .hero p {
-        font-size: 1.1em;
-      }
+    /* POPUP */
+    .popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.4s ease;
+      z-index: 9999;
+    }
+    .popup.active { opacity: 1; pointer-events: auto; }
+
+    .popup-content {
+      background: white;
+      border-radius: 15px;
+      padding: 30px 40px;
+      text-align: center;
+      max-width: 400px;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      animation: scaleIn 0.4s ease;
     }
 
+    @keyframes scaleIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .popup-content h2 { color: #1e3c72; margin-bottom: 15px; }
+    .popup-content p { color: #333; font-size: 1em; }
+
+    .popup-close {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 1.5em;
+      color: #666;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .popup-close:hover { color: #ff6b35; transform: scale(1.1); }
+
+    /* RESPONSIVE */
     @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex;
-      }
+      header { padding: 12px 30px; }
+      .logo img { width: 70px; }
+      .hero h1 { font-size: 2em; }
+      .hero h2 { font-size: 1.4em; }
+      .hero p { font-size: 1em; }
 
+      .menu-toggle { display: flex; }
       nav {
-        position: fixed;
+        position: absolute;
         top: 70px;
-        right: -100%;
-        flex-direction: column;
-        background: rgba(30, 60, 114, 0.95);
-        width: 200px;
-        padding: 20px;
-        border-radius: 0 0 0 20px;
-        gap: 15px;
-        text-align: left;
-        transition: right 0.4s ease;
-      }
-
-      nav.show {
         right: 0;
-      }
-
-      nav a, .btn-registrasi {
-        color: white;
-        font-size: 1em;
-      }
-
-      .hero {
-        padding-top: 140px;
-      }
-
-      .hero h1 {
-        font-size: 2em;
-      }
-
-      .hero p {
-        font-size: 1em;
-        padding: 0 15px;
-      }
-
-      section {
-        padding: 60px 15px;
-      }
-
-      section h2 {
-        font-size: 1.6em;
-      }
-
-      .buttons {
+        width: 100%;
         flex-direction: column;
-        width: 100%;
+        background: rgba(0,0,0,0.9);
+        padding: 20px 0;
+        transform: translateY(-250%);
+        transition: transform 0.3s ease;
       }
-
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
+      nav.active { transform: translateY(0); }
+      nav a { color: white !important; }
     }
-
   </style>
 </head>
 <body>
-
-  <!-- HEADER -->
   <header id="header">
     <div class="logo">
       <img src="logo.png" alt="Logo TWNAS" />
@@ -340,76 +311,89 @@
     </div>
 
     <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
 
     <nav id="nav-menu">
       <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Tora Membantu</a>
-      <a href="#">Team</a>
-      <button class="btn-registrasi">Registrasi</button>
+      <a href="#">Tentang Kami</a>
+      <a href="#">Informasi</a>
+      <a href="#">Kontak</a>
+      <button class="btn-registrasi" id="popupBtn">Registrasi</button>
     </nav>
   </header>
 
-  <!-- HERO -->
   <div class="hero">
-    <h1>TWNAS XXXV 2025</h1>
-    <p>Website resmi acara Temu Wicara Nasional FKMTSI ke-35 menginspirasi kolaborasi, inovasi, dan kebersamaan. Website ini berisi seluruh informasi mulai dari buku panduan, cara registrasi, lokasi penjemputan, contact person dan banyak hal ,lainnya.</p>
+    <h1>SELAMAT DATANG DI</h1>
+    <h2>TWNAS XXXV - WILAYAH X</h2>
+    <p>Website resmi acara Temu Wicara Nasional FKMTSI ke-35 yang memuat seluruh informasi dan keperluan teknis selama kegiatan berlangsung.</p>
   </div>
 
-  <!-- SECTION 1 -->
   <section class="about">
     <h2>✨ Tentang Kami</h2>
-    <p>Kami berkomitmen untuk menghadirkan wadah yang inspiratif bagi mahasiswa teknik sipil di seluruh Indonesia melalui diskusi, kolaborasi, dan inovasi berkelanjutan.</p>
+    <p>Kami berkomitmen menghadirkan wadah inspiratif bagi mahasiswa teknik sipil seluruh Indonesia.</p>
   </section>
 
-  <!-- SECTION 2 -->
-  <section class="projects">
-    <h2>🚀 Program & Kegiatan</h2>
-    <p>TWNAS XXXV menghadirkan beragam kegiatan menarik seperti seminar nasional, kunjungan lapangan, lomba inovasi, serta forum pertukaran gagasan antar wilayah FKMTSI.</p>
+  <section class="twnas-info">
+    <h2>📣 Informasi Kegiatan</h2>
+    <p>Segala informasi terbaru mengenai TWNAS XXXV 2025 akan diumumkan di halaman ini. Tetap pantau ya!</p>
   </section>
 
-  <!-- SECTION 3 -->
-  <section class="contact">
-    <h2>📞 Contact Person</h2>
-    <p>Hubungi tim kami untuk informasi lebih lanjut terkait akomodasi, transportasi, atau acara.</p>
-    <div class="buttons">
-      <a href="https://wa.me/6282251520792?text=Halo%20saya%20ingin%20bertanya%20tentang%20akomodasi" class="btn" target="_blank">Akomodasi</a>
-      <a href="https://wa.me/6282251520792?text=Halo%20saya%20ingin%20bertanya%20tentang%20transportasi" class="btn" target="_blank">Transportasi</a>
-      <a href="https://wa.me/6282251520792?text=Halo%20saya%20ingin%20bertanya%20tentang%20acara" class="btn" target="_blank">Acara</a>
+  <section class="closing">
+    <h2>Terima Kasih Telah Mengunjungi</h2>
+    <p>Sampai jumpa di TWNAS XXXV 2025 - Wilayah X!</p>
+  </section>
+
+  <footer>© 2025 TWNAS XXXV | FKMTSI Indonesia. All Rights Reserved.</footer>
+
+  <!-- POPUP -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="popup-close" id="closePopup">&times;</span>
+      <h2>Registrasi Belum Dibuka</h2>
+      <p>Tunggu info selanjutnya dari panitia!</p>
     </div>
-  </section>
+  </div>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 TWNAS XXXV | FKMTSI Indonesia. All Rights Reserved.
-  </footer>
+  <div class="popup" id="autoPopup">
+    <div class="popup-content">
+      <span class="popup-close" id="closeAuto">&times;</span>
+      <h2>Mohon Maaf!</h2>
+      <p>Website ini sedang dalam tahap pengembangan dan belum dapat digunakan. 🎉</p>
+    </div>
+  </div>
 
   <script>
-    const sections = document.querySelectorAll("section");
     const header = document.getElementById("header");
-    const toggle = document.getElementById("menu-toggle");
-    const nav = document.getElementById("nav-menu");
-
-    const revealOnScroll = () => {
-      const triggerBottom = window.innerHeight * 0.85;
-      sections.forEach(sec => {
-        const boxTop = sec.getBoundingClientRect().top;
-        if (boxTop < triggerBottom) sec.classList.add("visible");
-      });
+    window.addEventListener("scroll", () => {
       header.classList.toggle("scrolled", window.scrollY > 50);
-    };
+    });
 
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
+    const popup = document.getElementById("popup");
+    const popupBtn = document.getElementById("popupBtn");
+    const closePopup = document.getElementById("closePopup");
+    popupBtn.addEventListener("click", () => popup.classList.add("active"));
+    closePopup.addEventListener("click", () => popup.classList.remove("active"));
+    popup.addEventListener("click", (e) => { if (e.target === popup) popup.classList.remove("active"); });
 
-    toggle.addEventListener("click", () => {
-      nav.classList.toggle("show");
-      toggle.classList.toggle("active");
+    const autoPopup = document.getElementById("autoPopup");
+    const closeAuto = document.getElementById("closeAuto");
+    window.addEventListener("load", () => { setTimeout(() => autoPopup.classList.add("active"), 600); });
+    closeAuto.addEventListener("click", () => autoPopup.classList.remove("active"));
+    autoPopup.addEventListener("click", (e) => { if (e.target === autoPopup) autoPopup.classList.remove("active"); });
+
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+    }, { threshold: 0.2 });
+    sections.forEach(sec => observer.observe(sec));
+
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
     });
   </script>
 </body>
 </html>
+
