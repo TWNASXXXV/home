@@ -1,699 +1,716 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TWNAS XXXV</title>
-  <link rel="icon" type="image/png" href="logo.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TWNAS XXXV</title>
+    <link rel="icon" type="image/png" href="logo.png" />
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      color: #333;
-      overflow-x: hidden;
-      background: url('background.png') center/cover no-repeat fixed;
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+            background: url('background.png') center/cover no-repeat fixed;
+        }
 
-    /* ===== HEADER ===== */
-    header {
-      position: fixed;
-      top: 0; width: 100%;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 60px;
-      background: rgba(255, 255, 255, 0);
-      transition: all 0.4s ease;
-      z-index: 1000;
-    }
-    header.scrolled { background: rgba(255,255,255,0.95); color: #111; }
-    header.scrolled a { color: #111; }
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0; width: 100%;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 18px 60px;
+            background: rgba(255, 255, 255, 0);
+            transition: all 0.4s ease;
+            z-index: 1000;
+        }
+        header.scrolled { background: rgba(255,255,255,0.95); color: #111; }
+        header.scrolled a { color: #111; }
 
-    .logo { display: flex; align-items: center; gap: 18px; }
-    .logo img { width: 90px; transition: 0.3s; }
-    header.scrolled .logo img { width: 65px; }
+        .logo { display: flex; align-items: center; gap: 18px; }
+        .logo img { width: 90px; transition: 0.3s; }
+        header.scrolled .logo img { width: 65px; }
 
-    .logo-text h1 { font-size: 1.5em; font-weight: 700; color: #fff; transition: color 0.4s; }
-    .logo-text p { font-size: 0.9em; color: #fff; opacity: 0.9; transition: color 0.4s; }
+        .logo-text h1 { font-size: 1.5em; font-weight: 700; color: #fff; transition: color 0.4s; }
+        .logo-text p { font-size: 0.9em; color: #fff; opacity: 0.9; transition: color 0.4s; }
 
-    nav { display: flex; align-items: center; gap: 35px; }
-    nav a {
-      color: white; text-decoration: none; font-weight: 500;
-      font-size: 0.95em; transition: 0.3s;
-    }
-    nav a:hover { color: #ffb185; }
+        nav { display: flex; align-items: center; gap: 35px; }
+        nav a {
+            color: white; text-decoration: none; font-weight: 500;
+            font-size: 0.95em; transition: 0.3s;
+        }
+        nav a:hover { color: #ffb185; }
 
-    .btn-registrasi {
-      background: linear-gradient(135deg, #ff6b35, #ff934f);
-      color: white; padding: 10px 25px;
-      border: none; border-radius: 25px; cursor: pointer;
-      font-weight: 600; transition: 0.3s;
-    }
-    .btn-registrasi:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
-    }
+        .btn-registrasi {
+            background: linear-gradient(135deg, #ff6b35, #ff934f);
+            color: white; padding: 10px 25px;
+            border: none; border-radius: 25px; cursor: pointer;
+            font-weight: 600; transition: 0.3s;
+        }
+        .btn-registrasi:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
 
-    .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
-    .menu-toggle span { width: 28px; height: 3px; background: white; transition: 0.3s; }
-    header.scrolled .menu-toggle span { background: #222; }
+        .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
+        .menu-toggle span { width: 28px; height: 3px; background: white; transition: 0.3s; }
+        header.scrolled .menu-toggle span { background: #222; }
 
-    /* ===== HERO ===== */
-    .hero {
-      height: 100vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 100px 20px 20px;
-      color: white; position: relative;
-    }
-    .hero::before {
-      content: ""; position: absolute; inset: 0;
-      background: rgba(0, 0, 0, 0.6); z-index: 0;
-    }
-    .hero h1, .hero h2, .hero p { position: relative; z-index: 1; }
-    .hero h1 { font-size: 3em; font-weight: 700; margin-bottom: 15px; animation: fadeInDown 1s; }
-    .hero h2 { font-size: 2em; font-weight: 600; margin-bottom: 15px; animation: fadeInDown 1s; }
-    .hero p { max-width: 700px; font-size: 1.2em; opacity: 0.9; animation: fadeInUp 1s; }
+        /* ===== HERO ===== */
+        .hero {
+            height: 100vh;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center; padding: 100px 20px 20px;
+            color: white; position: relative;
+        }
+        .hero::before {
+            content: ""; position: absolute; inset: 0;
+            background: rgba(0, 0, 0, 0.6); z-index: 0;
+        }
+        .hero h1, .hero h2, .hero p { position: relative; z-index: 1; }
+        .hero h1 { font-size: 3em; font-weight: 700; margin-bottom: 15px; animation: fadeInDown 1s; }
+        .hero h2 { font-size: 2em; font-weight: 600; margin-bottom: 15px; animation: fadeInDown 1s; }
+        .hero p { max-width: 700px; font-size: 1.2em; opacity: 0.9; animation: fadeInUp 1s; }
 
-    /* ===== ANIMASI SECTION ===== */
-    section {
-      min-height: 100vh;
-      display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
-      text-align: center;
-      padding: 80px 20px;
-      opacity: 0; transform: translateY(50px);
-      transition: all 1s ease;
-    }
-    section.visible { opacity: 1; transform: translateY(0); }
+        /* ===== ANIMASI SECTION ===== */
+        section {
+            min-height: 100vh;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+            opacity: 0; transform: translateY(50px);
+            transition: all 1s ease;
+        }
+        section.visible { opacity: 1; transform: translateY(0); }
 
-    /* ===== ABOUT ===== */
-    .about {
-      position: relative;
-      color: #fff;
-      overflow: hidden;
-      padding: 100px 40px;
-    }
+        /* ===== ABOUT ===== */
+        .about {
+            position: relative;
+            color: #fff;
+            overflow: hidden;
+            padding: 100px 40px;
+        }
 
-    /* background slideshow */
-    .about::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      animation: bgSlide 25s infinite linear;
-      z-index: 0;
-    }
-    @keyframes bgSlide {
-      0% { background-image: url('bg1.jpeg'); }
-      33% { background-image: url('bg2.JPG'); }
-      66% { background-image: url('bg3.jpg'); }
-      100% { background-image: url('bg1.jpeg'); }
-    }
-    .about::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-      z-index: 0;
-    }
+        /* background slideshow */
+        .about::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            animation: bgSlide 25s infinite linear;
+            z-index: 0;
+        }
+        @keyframes bgSlide {
+            0% { background-image: url('bg1.jpeg'); }
+            33% { background-image: url('bg2.JPG'); }
+            66% { background-image: url('bg3.jpg'); }
+            100% { background-image: url('bg1.jpeg'); }
+        }
+        .about::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: 0;
+        }
 
-    .about h2 {
-      position: relative; z-index: 1;
-      font-size: 2.5em;
-      color: #FFD700;
-      margin-bottom: 40px;
-      text-align: center;
-    }
+        .about h2 {
+            position: relative; z-index: 1;
+            font-size: 2.5em;
+            color: #FFD700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
 
-    .about-container {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
+        .about-container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
 
-    .about-left, .about-right {
-      flex: 1;
-      min-width: 280px;
-      max-width: 420px;
-      text-align: justify;
-      background: rgba(255,255,255,0.08);
-      padding: 24px;
-      border-radius: 14px;
-      backdrop-filter: blur(4px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-      color: #fff;
-    }
+        .about-left, .about-right {
+            flex: 1;
+            min-width: 280px;
+            max-width: 420px;
+            text-align: justify;
+            background: rgba(255,255,255,0.08);
+            padding: 24px;
+            border-radius: 14px;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+            color: #fff;
+        }
 
-    .about h3 {
-      color: #FFD700;
-      margin-bottom: 12px;
-      font-size: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-    }
+        .about h3 {
+            color: #FFD700;
+            margin-bottom: 12px;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
 
-    .about p {
-      font-size: 15px;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.95);
-    }
+        .about p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.95);
+        }
 
-    .about-center {
-      flex: 0 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      padding-top: 6px;
-    }
+        .about-center {
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding-top: 6px;
+        }
 
-    .center-logo {
-      width: auto;
-      height: auto;
-      max-width: 220px;
-      border-radius: 12px;
-      padding: 8px;
-      background: rgba(255,255,255,0.03);
-      box-shadow: 0 6px 24px rgba(0,0,0,0.5), 0 0 30px rgba(255,215,0,0.12);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      object-fit: contain;
-    }
-    .center-logo:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 10px 40px rgba(0,0,0,0.55), 0 0 50px rgba(255,215,0,0.18);
-    }
+        .center-logo {
+            width: auto;
+            height: auto;
+            max-width: 220px;
+            border-radius: 12px;
+            padding: 8px;
+            background: rgba(255,255,255,0.03);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.5), 0 0 30px rgba(255,215,0,0.12);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            object-fit: contain;
+        }
+        .center-logo:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.55), 0 0 50px rgba(255,215,0,0.18);
+        }
 
-    .instagram-link { display: inline-block; margin-top: 6px; }
-    .instagram-logo {
-      width: 42px; height: 42px;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      background: rgba(255,255,255,0.03);
-      padding: 6px;
-    }
-    .instagram-logo:hover {
-      transform: translateY(-4px) scale(1.08);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.55), 0 0 30px rgba(255, 100, 150, 0.12);
-    }
+        .instagram-link { display: inline-block; margin-top: 6px; }
+        .instagram-logo {
+            width: 42px; height: 42px;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background: rgba(255,255,255,0.03);
+            padding: 6px;
+        }
+        .instagram-logo:hover {
+            transform: translateY(-4px) scale(1.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.55), 0 0 30px rgba(255, 100, 150, 0.12);
+        }
 
-    /* responsive */
-    @media (max-width: 900px) {
-      .about-container { flex-direction: column; align-items: center; }
-      .about-left, .about-right { max-width: 720px; text-align: left; }
-      .center-logo { max-width: 280px; }
-    }
+        /* responsive */
+        @media (max-width: 900px) {
+            .about-container { flex-direction: column; align-items: center; }
+            .about-left, .about-right { max-width: 720px; text-align: left; }
+            .center-logo { max-width: 280px; }
+        }
 
-    /* ===== PAGE 3 - MODIFIKASI FINAL ===== */
-.page3 {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(180deg, #f0f8ff, #ffffff);
-    color: #2c3e50;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 1s ease;
-}
+        /* ===== PAGE 3 - MODIFIKASI FINAL ===== */
+        .page3 {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(180deg, #f0f8ff, #ffffff);
+            color: #2c3e50;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
 
-.page3.visible { opacity: 1; transform: translateY(0); }
+        .page3.visible { opacity: 1; transform: translateY(0); }
 
-.page3-title {
-    font-size: 3.2em;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #34495e;
-    letter-spacing: 1px;
-}
+        .page3-title {
+            font-size: 3.2em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #34495e;
+            letter-spacing: 1px;
+        }
 
-.page3-subtitle {
-    font-size: 1.8em;
-    font-weight: 600;
-    color: #e67e22;
-    margin-bottom: 50px;
-    max-width: 800px;
-    line-height: 1.4;
-}
+        .page3-subtitle {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #e67e22;
+            margin-bottom: 50px;
+            max-width: 800px;
+            line-height: 1.4;
+        }
 
-.page3-content {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Kunci: Rata atas untuk memposisikan logo lebih tinggi */
-    gap: 60px;
-    flex-wrap: wrap;
-    max-width: 1100px;
-    margin-top: 30px;
-    text-align: left; /* Teks konten rata kiri */
-}
+        .page3-content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Kunci: Rata atas untuk memposisikan logo lebih tinggi */
+            gap: 60px;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin-top: 30px;
+            text-align: left; /* Teks konten rata kiri */
+        }
 
-/* Kiri: Logo & Tombol */
-.page3-left {
-    flex: 0 0 auto; /* Tidak mengembang, hanya selebar konten */
-    min-width: 300px;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-top: 0; /* Hapus padding-top */
-}
+        /* Kiri: Logo & Tombol */
+        .page3-left {
+            flex: 0 0 auto; /* Tidak mengembang, hanya selebar konten */
+            min-width: 300px;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding-top: 0; /* Hapus padding-top */
+        }
 
-.page3-logo-container {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    margin-bottom: 25px; /* Jarak antara logo dan tombol */
-}
+        .page3-logo-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            margin-bottom: 25px; /* Jarak antara logo dan tombol */
+        }
 
-.page3-logo {
-    max-width: 280px;
-    height: auto;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
-    display: block;
-    object-fit: contain;
-}
+        .page3-logo {
+            max-width: 280px;
+            height: auto;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            display: block;
+            object-fit: contain;
+        }
 
-.page3-logo:hover { transform: scale(1.05); }
+        .page3-logo:hover { transform: scale(1.05); }
 
-.page3-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    max-width: 280px; /* Batasi lebar tombol */
-}
+        .page3-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            max-width: 280px; /* Batasi lebar tombol */
+        }
 
-.page3-btn {
-    display: block;
-    padding: 12px 20px;
-    background: linear-gradient(45deg, #ff6b35, #e67e22); /* Warna oranye/merah */
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    text-align: center;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-}
+        .page3-btn {
+            display: block;
+            padding: 12px 20px;
+            background: linear-gradient(45deg, #ff6b35, #e67e22); /* Warna oranye/merah */
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
 
-.page3-btn:hover {
-    background: linear-gradient(45deg, #e67e22, #ff6b35);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
-}
-
-
-/* Kanan: Tema & Tujuan */
-.page3-right {
-    flex: 1;
-    min-width: 400px;
-    max-width: 600px;
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.page3-right h3 {
-    color: #e67e22;
-    margin-bottom: 15px;
-    font-size: 1.6em;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-bottom: 2px solid rgba(230, 126, 34, 0.3);
-    padding-bottom: 8px;
-    margin-top: 25px;
-}
-
-.page3-right h3:first-of-type { margin-top: 0; }
-
-.page3-right .theme-text {
-    font-size: 1.1em;
-    font-weight: 500;
-    color: #34495e;
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-
-/* Styling Khusus untuk Poin 1, 2, 3, 4 (Daftar Tujuan) */
-.page3-right ul {
-    list-style: none; /* Hapus list style default */
-    padding: 0;
-    margin: 0;
-}
-
-.page3-right ul li {
-    font-size: 1.05em;
-    line-height: 1.9;
-    color: #34495e;
-    margin-bottom: 15px;
-    padding-left: 20px; /* Ruang untuk penanda kustom */
-    position: relative;
-}
-
-/* Penanda Angka Kustom (1, 2, 3, 4) */
-.page3-right ul li::before {
-    content: counter(li); /* Menggunakan counter untuk angka */
-    counter-increment: li;
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-weight: 700;
-    color: #ff6b35; /* Warna penanda */
-    font-size: 1.1em;
-    margin-right: 10px;
-}
-/* Reset counter */
-.page3-right h3[id="tujuan"] + ul { counter-reset: li; }
+        .page3-btn:hover {
+            background: linear-gradient(45deg, #e67e22, #ff6b35);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+        }
 
 
-/* Responsive */
-@media (max-width: 950px) {
-    .page3-content { flex-direction: column; align-items: center; gap: 30px; }
-    .page3-left { min-width: unset; max-width: 90%; }
-    .page3-right { min-width: unset; max-width: 90%; text-align: left; }
-    .page3-logo-container { padding: 15px; }
-    .page3-logo { max-width: 220px; }
-    .page3-buttons { max-width: 250px; }
-}
+        /* Kanan: Tema & Tujuan */
+        .page3-right {
+            flex: 1;
+            min-width: 400px;
+            max-width: 600px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
 
-@media (max-width: 500px) {
-    .page3-title { font-size: 2.5em; }
-    .page3-subtitle { font-size: 1.2em; margin-bottom: 30px; }
-    .page3-right h3 { font-size: 1.4em; }
-    .page3-right { padding: 20px; }
-    .page3-btn { padding: 10px 15px; font-size: 0.9em; }
-}
+        .page3-right h3 {
+            color: #e67e22;
+            margin-bottom: 15px;
+            font-size: 1.6em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid rgba(230, 126, 34, 0.3);
+            padding-bottom: 8px;
+            margin-top: 25px;
+        }
+
+        .page3-right h3:first-of-type { margin-top: 0; }
+
+        .page3-right .theme-text {
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #34495e;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        /* Styling Khusus untuk Poin 1, 2, 3, 4 (Daftar Tujuan) */
+        .page3-right ul {
+            list-style: none; /* Hapus list style default */
+            padding: 0;
+            margin: 0;
+        }
+
+        .page3-right ul li {
+            font-size: 1.05em;
+            line-height: 1.9;
+            color: #34495e;
+            margin-bottom: 15px;
+            padding-left: 20px; /* Ruang untuk penanda kustom */
+            position: relative;
+        }
+
+        /* Penanda Angka Kustom (1, 2, 3, 4) */
+        .page3-right ul li::before {
+            content: counter(li); /* Menggunakan counter untuk angka */
+            counter-increment: li;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: 700;
+            color: #ff6b35; /* Warna penanda */
+            font-size: 1.1em;
+            margin-right: 10px;
+        }
+        /* Reset counter */
+        .page3-right h3[id="tujuan"] + ul { counter-reset: li; }
 
 
-/* responsive */
-@media (max-width: 900px) {
-  .page3-title {
-    font-size: 2.5em;
-  }
-  .page3-subtitle {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-  }
-  .page3-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px; /* Kurangi gap untuk mobile */
-  }
-  .page3-left,
-  .page3-right {
-    max-width: 90%; /* Gunakan persentase lebar untuk fleksibilitas */
-    min-width: unset; /* Hapus min-width tetap */
-    text-align: center; /* Tengah teks untuk mobile */
-  }
-  .page3-logo {
-    max-width: 220px; /* Sesuaikan ukuran logo untuk mobile */
-    margin-bottom: 20px;
-  }
-  .page3-right h3 {
-    font-size: 1.4em;
-    text-align: center; /* Tengah judul untuk mobile */
-    border-bottom: none; /* Hapus garis bawah di mobile */
-    padding-bottom: 0;
-    margin-top: 20px;
-  }
-  .page3-right p {
-    font-size: 1em;
-    text-align: center; /* Tengah paragraf untuk mobile */
-  }
-}
+        /* Responsive */
+        @media (max-width: 950px) {
+            .page3-content { flex-direction: column; align-items: center; gap: 30px; }
+            .page3-left { min-width: unset; max-width: 90%; }
+            .page3-right { min-width: unset; max-width: 90%; text-align: left; }
+            .page3-logo-container { padding: 15px; }
+            .page3-logo { max-width: 220px; }
+            .page3-buttons { max-width: 250px; }
+        }
 
-/* Penyesuaian untuk tampilan yang sangat kecil */
-@media (max-width: 500px) {
-  .page3-title {
-    font-size: 2em;
-  }
-  .page3-subtitle {
-    font-size: 1em;
-  }
-  .page3-left, .page3-right {
-    padding: 20px;
-  }
-  .page3-logo {
-    max-width: 180px;
-  }
-}
+        @media (max-width: 500px) {
+            .page3-title { font-size: 2.5em; }
+            .page3-subtitle { font-size: 1.2em; margin-bottom: 30px; }
+            .page3-right h3 { font-size: 1.4em; }
+            .page3-right { padding: 20px; }
+            .page3-btn { padding: 10px 15px; font-size: 0.9em; }
+        }
 
-    /* ===== PENUTUP ===== */
-    .closing { position: relative; color: white; }
-    .closing::before {
-      content: "";
-      position: absolute; inset: 0;
-      background: rgba(0,0,0,0.5); z-index: 0;
-    }
-    .closing h2, .closing p { position: relative; z-index: 1; }
 
-    /* ===== FOOTER ===== */
-    footer {
-      background: #1e3c72; color: white;
-      text-align: center; padding: 25px 10px;
-      font-size: 0.9em;
-    }
+        /* responsive */
+        @media (max-width: 900px) {
+            .page3-title { font-size: 2.5em; }
+            .page3-subtitle { font-size: 1.2em; margin-bottom: 30px; }
+            .page3-content { flex-direction: column; align-items: center; gap: 30px; }
+            .page3-left, .page3-right { max-width: 90%; min-width: unset; text-align: center; }
+            .page3-logo { max-width: 220px; margin-bottom: 20px; }
+            .page3-right h3 { font-size: 1.4em; text-align: center; border-bottom: none; padding-bottom: 0; margin-top: 20px; }
+            .page3-right p { font-size: 1em; text-align: center; }
+        }
 
-    /* ===== POPUP ===== */
-    .popup {
-      position: fixed; top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0; pointer-events: none;
-      transition: 0.4s ease; z-index: 9999;
-    }
-    .popup.active { opacity: 1; pointer-events: auto; }
+        /* Penyesuaian untuk tampilan yang sangat kecil */
+        @media (max-width: 500px) {
+            .page3-title { font-size: 2em; }
+            .page3-subtitle { font-size: 1em; }
+            .page3-left, .page3-right { padding: 20px; }
+            .page3-logo { max-width: 180px; }
+        }
 
-    .popup-content {
-      background: white; border-radius: 15px;
-      padding: 30px 40px; text-align: center;
-      max-width: 400px; position: relative;
-      animation: scaleIn 0.4s ease;
-    }
-    @keyframes scaleIn {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-    .popup-close { position: absolute; top: 10px; right: 15px; font-size: 1.5em; color: #666; cursor: pointer; }
-    .popup-close:hover { color: #ff6b35; transform: scale(1.1); }
+        /* ===== PENUTUP ===== */
+        .closing { position: relative; color: white; }
+        .closing::before {
+            content: "";
+            position: absolute; inset: 0;
+            background: rgba(0,0,0,0.5); z-index: 0;
+        }
+        .closing h2, .closing p { position: relative; z-index: 1; }
 
-    /* ===== RESPONSIVE NAV ===== */
-    @media (max-width: 768px) {
-      header { padding: 12px 30px; }
-      .logo img { width: 70px; }
-      .hero h1 { font-size: 2em; }
-      .hero h2 { font-size: 1.4em; }
-      .hero p { font-size: 1em; }
-      .menu-toggle { display: flex; }
-      nav {
-        position: absolute; top: 70px; right: 0;
-        width: 100%; flex-direction: column;
-        background: rgba(0,0,0,0.9);
-        padding: 20px 0;
-        transform: translateY(-250%);
-        transition: transform 0.3s;
-      }
-      nav.active { transform: translateY(0); }
-      nav a { color: white !important; }
-    }
-  </style>
+        /* ===== FOOTER ===== */
+        footer {
+            background: #1e3c72; color: white;
+            text-align: center; padding: 25px 10px;
+            font-size: 0.9em;
+        }
+
+        /* ===== POPUP ===== */
+        .popup {
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none;
+            transition: 0.4s ease; z-index: 9999;
+        }
+        .popup.active { opacity: 1; pointer-events: auto; }
+
+        .popup-content {
+            background: white; border-radius: 15px;
+            padding: 30px 40px; text-align: center;
+            max-width: 400px; position: relative;
+            animation: scaleIn 0.4s ease;
+        }
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .popup-close { position: absolute; top: 10px; right: 15px; font-size: 1.5em; color: #666; cursor: pointer; }
+        .popup-close:hover { color: #ff6b35; transform: scale(1.1); }
+
+        /* ===== RESPONSIVE NAV ===== */
+        @media (max-width: 768px) {
+            header { padding: 12px 30px; }
+            .logo img { width: 70px; }
+            .hero h1 { font-size: 2em; }
+            .hero h2 { font-size: 1.4em; }
+            .hero p { font-size: 1em; }
+            .menu-toggle { display: flex; }
+            nav {
+                position: absolute; top: 70px; right: 0;
+                width: 100%; flex-direction: column;
+                background: rgba(0,0,0,0.9);
+                padding: 20px 0;
+                transform: translateY(-250%);
+                transition: transform 0.3s;
+            }
+            nav.active { transform: translateY(0); }
+            nav a { color: white !important; }
+        }
+    </style>
 </head>
 <body>
-  <header id="header">
-    <div class="logo">
-      <img src="logo.png" alt="Logo TWNAS" />
-      <div class="logo-text">
-        <h1>Temu Wicara Nasional</h1>
-        <p>XXXV FKMTSI 2025</p>
-      </div>
+    <header id="header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo TWNAS" />
+            <div class="logo-text">
+                <h1>Temu Wicara Nasional</h1>
+                <p>XXXV FKMTSI 2025</p>
+            </div>
+        </div>
+
+        <div class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></div>
+
+        <nav id="nav-menu">
+            <a href="#">Home</a>
+            <a href="#about">Tentang Kami</a>
+            <a href="#info">Informasi</a>
+            <a href="#">Kontak</a>
+            <button class="btn-registrasi" id="popupBtn">Registrasi</button>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>SELAMAT DATANG DI</h1>
+        <h2>TWNAS XXXV - WILAYAH X</h2>
+        <p>Website resmi acara Temu Wicara Nasional FKMTSI ke-35 yang memuat seluruh informasi dan keperluan teknis selama kegiatan berlangsung.</p>
     </div>
 
-    <div class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></div>
+    <section class="about" id="about">
+        <h2>Tentang Kami</h2>
+        <div class="about-container">
+            <div class="about-left">
+                <h3>APA ITU FKMTSI?</h3>
+                <p>
+                    Forum Komunikasi Mahasiswa Teknik Sipil Indonesia (FKMTSI) adalah organisasi kemahasiswaan Teknik Sipil pada program studi Teknik Sipil yang diakui oleh masing-masing Perguruan Tinggi se-Indonesia. Dideklarasikan pada 24 Desember 1987 di Bandung dan disahkan 1 Maret 1989 di Jakarta. FKMTSI berfungsi sebagai wadah komunikasi.
+                </p>
+            </div>
 
-    <nav id="nav-menu">
-      <a href="#">Home</a>
-      <a href="#about">Tentang Kami</a>
-      <a href="#info">Informasi</a>
-      <a href="#">Kontak</a>
-      <button class="btn-registrasi" id="popupBtn">Registrasi</button>
-    </nav>
-  </header>
+            <div class="about-center">
+                <img src="about.jpg" alt="Logo FKMTSI" class="center-logo" />
+                <a href="https://www.instagram.com/sipil_indonesia" target="_blank" class="instagram-link">
+                    <img src="instagram.png" alt="Instagram" class="instagram-logo" />
+                </a>
+            </div>
 
-  <div class="hero">
-    <h1>SELAMAT DATANG DI</h1>
-    <h2>TWNAS XXXV - WILAYAH X</h2>
-    <p>Website resmi acara Temu Wicara Nasional FKMTSI ke-35 yang memuat seluruh informasi dan keperluan teknis selama kegiatan berlangsung.</p>
-  </div>
+            <div class="about-right">
+                <h3>Tujuan</h3>
+                <p>
+                    1. Menyatukan persepsi dan pemikiran tentang Teknik Sipil Indonesia.<br>
+                    2. Mengambil bagian dan berperan aktif dalam pembangunan nasional.<br>
+                    3. Meningkatkan kiprah Mahasiswa Teknik Sipil untuk mewujudkan sifat mandiri dan profesional.
+                </p>
+            </div>
+        </div>
+    </section>
 
-  <!-- ===== SECTION ABOUT ===== -->
-  <section class="about" id="about">
-    <h2>Tentang Kami</h2>
-    <div class="about-container">
-      <div class="about-left">
-        <h3>APA ITU FKMTSI?</h3>
-        <p>
-          Forum Komunikasi Mahasiswa Teknik Sipil Indonesia (FKMTSI) adalah organisasi kemahasiswaan Teknik Sipil pada program studi Teknik Sipil yang diakui oleh masing-masing Perguruan Tinggi se-Indonesia. Dideklarasikan pada 24 Desember 1987 di Bandung dan disahkan 1 Maret 1989 di Jakarta. FKMTSI berfungsi sebagai wadah komunikasi.
-        </p>
-      </div>
+    <section class="page3" id="info">
+        <h2 class="page3-title">TWNAS XXXV</h2>
+        <h3 class="page3-subtitle">TEMU WICARA NASIONAL FKMTSI XXXV KALIMANTAN</h3>
 
-      <div class="about-center">
-        <img src="about.jpg" alt="Logo FKMTSI" class="center-logo" />
-        <a href="https://www.instagram.com/sipil_indonesia" target="_blank" class="instagram-link">
-          <img src="instagram.png" alt="Instagram" class="instagram-logo" />
-        </a>
-      </div>
-
-      <div class="about-right">
-        <h3>Tujuan</h3>
-        <p>
-          1. Menyatukan persepsi dan pemikiran tentang Teknik Sipil Indonesia.<br>
-          2. Mengambil bagian dan berperan aktif dalam pembangunan nasional.<br>
-          3. Meningkatkan kiprah Mahasiswa Teknik Sipil untuk mewujudkan sifat mandiri dan profesional.
-        </p>
-      </div>
-    </div>
-  </section>
-
-<section class="page3" id="info">
-    <h2 class="page3-title">TWNAS XXXV</h2>
-    <h3 class="page3-subtitle">TEMU WICARA NASIONAL FKMTSI XXXV KALIMANTAN</h3>
-
-    <div class="page3-content">
-        <div class="page3-left">
-            <div class="page3-logo-container">
-                <img src="logo.png" alt="Logo TWNAS Kalimantan" class="page3-logo">
+        <div class="page3-content">
+            <div class="page3-left">
+                <div class="page3-logo-container">
+                    <img src="logo.png" alt="Logo TWNAS Kalimantan" class="page3-logo">
+                </div>
+                
+                <div class="page3-buttons">
+                    <a href="#" class="page3-btn" id="btnFilosofi">Filosofi Logo</a>
+                    <a href="#" class="page3-btn" id="btnPerjalanan">Perjalanan TWNAS</a>
+                    <a href="#" class="page3-btn" id="btnBukuPanduan">Buku Panduan</a>
+                </div>
             </div>
             
-            <div class="page3-buttons">
-                <a href="#" class="page3-btn" onclick="alert('Halaman Filosofi Logo belum tersedia!')">Filosofi Logo</a>
-                <a href="#" class="page3-btn" onclick="alert('Halaman Perjalanan TWNAS belum tersedia!')">Perjalanan TWNAS</a>
-                <a href="#" class="page3-btn" onclick="alert('Halaman Buku Panduan belum tersedia!')">Buku Panduan</a>
+            <div class="page3-right">
+                <h3>Tema Kegiatan</h3>
+                <p class="theme-text">Mengenalkan Infrastruktur Inovatif Ibu Kota Nusantara (IKN) Untuk Kemajuan Pembangunan Negeri</p>
+
+                <h3 id="tujuan">Tujuan</h3>
+                <ul>
+                    <li>Memperoleh pengetahuan mengenai inovasi terbaru yang ada di dunia konstruksi.</li>
+                    <li>Menjalin hubungan dan kerjasama yang erat antara Program studi Teknik Sipil Universitas Se-WiIayah X Kalimantan dengan Perguruan Tinggi Teknik Sipil Se-Indonesia.</li>
+                    <li>Memperoleh informasi mengenai perkembangan ilmu pengetahuan dan teknologi informasi terutama dalam penerapannya dalam dunia industri.</li>
+                    <li>Mempersiapkan mahasiswa teknik sipil sebagai lulusan yang mampu menghadapi pasca—bebas dan globalisasi dengan membentuk kepercayaan diri dalam proses penyesuaian di lingkungan kerjanya.</li>
+                </ul>
             </div>
         </div>
-        
-        <div class="page3-right">
-            <h3>Tema Kegiatan</h3>
-            <p class="theme-text">Mengenalkan Infrastruktur Inovatif Ibu Kota Nusantara (IKN) Untuk Kemajuan Pembangunan Negeri</p>
+    </section>
 
-            <h3 id="tujuan">Tujuan</h3>
-            <ul>
-                <li>Memperoleh pengetahuan mengenai inovasi terbaru yang ada di dunia konstruksi.</li>
-                <li>Menjalin hubungan dan kerjasama yang erat antara Program studi Teknik Sipil Universitas Se-WiIayah X Kalimantan dengan Perguruan Tinggi Teknik Sipil Se-Indonesia.</li>
-                <li>Memperoleh informasi mengenai perkembangan ilmu pengetahuan dan teknologi informasi terutama dalam penerapannya dalam dunia industri.</li>
-                <li>Mempersiapkan mahasiswa teknik sipil sebagai lulusan yang mampu menghadapi pasca—bebas dan globalisasi dengan membentuk kepercayaan diri dalam proses penyesuaian di lingkungan kerjanya.</li>
-            </ul>
+
+    <section class="closing">
+        <h2>Terima Kasih Telah Mengunjungi</h2>
+        <p>Sampai jumpa di TWNAS XXXV 2025 - Wilayah X!</p>
+    </section>
+
+    <footer>© 2025 TWNAS XXXV | FKMTSI Indonesia. All Rights Reserved.</footer>
+
+    <div class="popup" id="popupRegistrasi">
+        <div class="popup-content">
+            <span class="popup-close" id="closePopupRegistrasi">&times;</span>
+            <h2>Registrasi Belum Dibuka</h2>
+            <p>Tunggu info selanjutnya dari panitia!</p>
         </div>
     </div>
-</section>
 
-
-  <!-- ===== PENUTUP ===== -->
-  <section class="closing">
-    <h2>Terima Kasih Telah Mengunjungi</h2>
-    <p>Sampai jumpa di TWNAS XXXV 2025 - Wilayah X!</p>
-  </section>
-
-  <footer>© 2025 TWNAS XXXV | FKMTSI Indonesia. All Rights Reserved.</footer>
-
-  <!-- ===== POPUP ===== -->
-  <div class="popup" id="popup">
-    <div class="popup-content">
-      <span class="popup-close" id="closePopup">&times;</span>
-      <h2>Registrasi Belum Dibuka</h2>
-      <p>Tunggu info selanjutnya dari panitia!</p>
+    <div class="popup" id="autoPopup">
+        <div class="popup-content">
+            <span class="popup-close" id="closeAuto">&times;</span>
+            <h2>Mohon Maaf!</h2>
+            <p>Website ini sedang dalam tahap pengembangan dan belum dapat digunakan. -Dion</p>
+        </div>
     </div>
-  </div>
 
-  <div class="popup" id="autoPopup">
-    <div class="popup-content">
-      <span class="popup-close" id="closeAuto">&times;</span>
-      <h2>Mohon Maaf!</h2>
-      <p>Website ini sedang dalam tahap pengembangan dan belum dapat digunakan. -Dion</p>
+    <div class="popup" id="popupFilosofi">
+        <div class="popup-content">
+            <span class="popup-close" id="closePopupFilosofi">&times;</span>
+            <h2>Filosofi Logo TWNAS XXXV</h2>
+            <p>Filosofi logo ini akan menjelaskan makna dari setiap elemen visual yang mewakili semangat FKMTSI dan tuan rumah Kalimantan. Nantikan rilis resminya!</p>
+        </div>
     </div>
-  </div>
 
-  <!-- 🎵 Musik Latar Belakang -->
-<audio id="bgMusic" autoplay loop muted>
-  <source src="musik.mp3" type="audio/mpeg">
-</audio>
+    <div class="popup" id="popupPerjalanan">
+        <div class="popup-content">
+            <span class="popup-close" id="closePopupPerjalanan">&times;</span>
+            <h2>Perjalanan TWNAS (Roadmap)</h2>
+            <p>Halaman ini akan memuat jadwal rinci, tahapan pendaftaran, dan seluruh rangkaian acara TWNAS XXXV dari awal hingga akhir. Tetap ikuti media sosial kami!</p>
+        </div>
+    </div>
 
-<script>
-  const bgMusic = document.getElementById('bgMusic');
+    <div class="popup" id="popupBukuPanduan">
+        <div class="popup-content">
+            <span class="popup-close" id="closePopupBukuPanduan">&times;</span>
+            <h2>Buku Panduan Peserta</h2>
+            <p>Buku panduan berisi tata tertib, kontak penting, denah lokasi, dan semua informasi praktis yang dibutuhkan peserta. Akan tersedia H-30 kegiatan.</p>
+        </div>
+    </div>
 
-  // Set volume agar tidak terlalu keras
-  bgMusic.volume = 0.2;
+    <audio id="bgMusic" autoplay loop muted>
+        <source src="musik.mp3" type="audio/mpeg">
+    </audio>
 
-  // Pastikan tetap looping
-  bgMusic.addEventListener('ended', () => {
-    bgMusic.currentTime = 0;
-    bgMusic.play();
-  });
+    <script>
+        const bgMusic = document.getElementById('bgMusic');
 
-  // Aktifkan suara saat pengguna pertama kali klik halaman
-  document.addEventListener('click', function enableAudio() {
-    if (bgMusic.muted) {
-      bgMusic.muted = false;
-      bgMusic.play().catch(() => {}); // mencegah error autoplay
-    }
-    document.removeEventListener('click', enableAudio);
-  });
+        // Set volume agar tidak terlalu keras
+        bgMusic.volume = 0.2;
 
-  // Pause otomatis ketika tab tidak aktif, resume saat kembali
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      bgMusic.pause();
-    } else {
-      bgMusic.play().catch(() => {});
-    }
-  });
-</script>
+        // Pastikan tetap looping
+        bgMusic.addEventListener('ended', () => {
+            bgMusic.currentTime = 0;
+            bgMusic.play();
+        });
+
+        // Aktifkan suara saat pengguna pertama kali klik halaman
+        document.addEventListener('click', function enableAudio() {
+            if (bgMusic.muted) {
+                bgMusic.muted = false;
+                bgMusic.play().catch(() => {}); // mencegah error autoplay
+            }
+            document.removeEventListener('click', enableAudio);
+        });
+
+        // Pause otomatis ketika tab tidak aktif, resume saat kembali
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                bgMusic.pause();
+            } else {
+                bgMusic.play().catch(() => {});
+            }
+        });
+    </script>
 
 
-  <script>
-    const header = document.getElementById("header");
-    window.addEventListener("scroll", () => header.classList.toggle("scrolled", window.scrollY > 50));
+    <script>
+        const header = document.getElementById("header");
+        window.addEventListener("scroll", () => header.classList.toggle("scrolled", window.scrollY > 50));
 
-    const popup = document.getElementById("popup");
-    const popupBtn = document.getElementById("popupBtn");
-    const closePopup = document.getElementById("closePopup");
-    popupBtn.addEventListener("click", () => popup.classList.add("active"));
-    closePopup.addEventListener("click", () => popup.classList.remove("active"));
-    popup.addEventListener("click", e => { if (e.target === popup) popup.classList.remove("active"); });
+        // --- FUNGSI POPUP UMUM ---
+        // Fungsi untuk mengaitkan tombol dengan popup dan menutupnya
+        const setupPopup = (buttonId, popupId, closeId) => {
+            const popupElement = document.getElementById(popupId);
+            const btn = document.getElementById(buttonId);
+            const closeBtn = document.getElementById(closeId);
 
-    const autoPopup = document.getElementById("autoPopup");
-    const closeAuto = document.getElementById("closeAuto");
-    window.addEventListener("load", () => setTimeout(() => autoPopup.classList.add("active"), 600));
-    closeAuto.addEventListener("click", () => autoPopup.classList.remove("active"));
-    autoPopup.addEventListener("click", e => { if (e.target === autoPopup) autoPopup.classList.remove("active"); });
+            if (btn) btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                popupElement.classList.add("active");
+            });
 
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
-    }, { threshold: 0.2 });
-    sections.forEach(sec => observer.observe(sec));
+            const closePopupFunction = () => popupElement.classList.remove("active");
 
-    const menuToggle = document.getElementById("menu-toggle");
-    const navMenu = document.getElementById("nav-menu");
-    menuToggle.addEventListener("click", () => navMenu.classList.toggle("active"));
-  </script>
+            if (closeBtn) closeBtn.addEventListener("click", closePopupFunction);
+            if (popupElement) popupElement.addEventListener("click", e => {
+                if (e.target === popupElement) closePopupFunction();
+            });
+        };
+
+        // --- SETUP 5 POPUP BERBEDA ---
+
+        // 1. Registrasi (Header Button)
+        setupPopup("popupBtn", "popupRegistrasi", "closePopupRegistrasi");
+
+        // 2. Filosofi Logo (Page 3 Button)
+        setupPopup("btnFilosofi", "popupFilosofi", "closePopupFilosofi");
+
+        // 3. Perjalanan TWNAS (Page 3 Button)
+        setupPopup("btnPerjalanan", "popupPerjalanan", "closePopupPerjalanan");
+
+        // 4. Buku Panduan (Page 3 Button)
+        setupPopup("btnBukuPanduan", "popupBukuPanduan", "closePopupBukuPanduan");
+
+        // 5. AutoPopup (Pesan Dion saat load)
+        const autoPopup = document.getElementById("autoPopup");
+        const closeAuto = document.getElementById("closeAuto");
+        window.addEventListener("load", () => setTimeout(() => autoPopup.classList.add("active"), 600));
+        closeAuto.addEventListener("click", () => autoPopup.classList.remove("active"));
+        autoPopup.addEventListener("click", e => { if (e.target === autoPopup) autoPopup.classList.remove("active"); });
+
+
+        // --- SETUP ANIMASI SCROLL ---
+        const sections = document.querySelectorAll("section");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+        }, { threshold: 0.2 });
+        sections.forEach(sec => observer.observe(sec));
+
+        // --- SETUP MENU MOBILE ---
+        const menuToggle = document.getElementById("menu-toggle");
+        const navMenu = document.getElementById("nav-menu");
+        menuToggle.addEventListener("click", () => navMenu.classList.toggle("active"));
+    </script>
 </body>
 </html>
