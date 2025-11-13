@@ -96,50 +96,28 @@
       padding: 100px 40px;
     }
 
-    /* ✅ Perbaikan background slideshow agar fade halus tanpa zoom */
-    .about::before,
-    .about::after,
-    .about .bg3 {
+    /* background slideshow */
+    .about::before {
       content: "";
       position: absolute;
       inset: 0;
       background-size: cover;
       background-position: center;
-      opacity: 0;
-      transition: opacity 2s ease-in-out;
+      animation: bgSlide 25s infinite linear;
       z-index: 0;
     }
-
-    .about::before {
-      background-image: url('bg1.jpeg');
-      animation: fade1 30s infinite;
+    @keyframes bgSlide {
+      0% { background-image: url('bg1.jpg'); }
+      33% { background-image: url('bg2.jpg'); }
+      66% { background-image: url('bg3.jpg'); }
+      100% { background-image: url('bg1.jpg'); }
     }
-
     .about::after {
-      background-image: url('bg2.JPG');
-      animation: fade2 30s infinite;
-    }
-
-    .about .bg3 {
-      background-image: url('bg3.jpg');
-      animation: fade3 30s infinite;
-    }
-
-    @keyframes fade1 {
-      0%, 30% { opacity: 1; }
-      33%, 100% { opacity: 0; }
-    }
-
-    @keyframes fade2 {
-      0%, 33% { opacity: 0; }
-      36%, 63% { opacity: 1; }
-      66%, 100% { opacity: 0; }
-    }
-
-    @keyframes fade3 {
-      0%, 66% { opacity: 0; }
-      69%, 96% { opacity: 1; }
-      100% { opacity: 0; }
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 0;
     }
 
     .about h2 {
@@ -330,7 +308,6 @@
 
   <!-- ===== SECTION ABOUT ===== -->
   <section class="about" id="about">
-    <div class="bg3"></div>
     <h2>Tentang Kami</h2>
     <div class="about-container">
       <div class="about-left">
