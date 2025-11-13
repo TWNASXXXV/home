@@ -9,7 +9,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; } /* ✅ Smooth scroll */
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -17,9 +17,6 @@
       overflow-x: hidden;
       background: url('background.png') center/cover no-repeat fixed;
       background-attachment: fixed;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
     }
 
     header {
@@ -54,9 +51,7 @@
       transition: 0.3s ease;
     }
 
-    header.scrolled .logo img {
-      width: 65px;
-    }
+    header.scrolled .logo img { width: 65px; }
 
     .logo-text h1 {
       font-size: 1.5em;
@@ -181,12 +176,43 @@
 
     section.visible { opacity: 1; transform: translateY(0); }
 
-    .about, .twnas-info {
-      background: linear-gradient(135deg, #ffffff, #e3f2fd);
+    .about {
+      position: relative;
       color: #1e3c72;
+      overflow: hidden;
     }
 
-    /* ✅ Tambahan gaya untuk gambar dan teks */
+    /* ✅ Background slideshow otomatis */
+    .about::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+      animation: bgSlide 20s infinite linear;
+    }
+
+    @keyframes bgSlide {
+      0% { background-image: url('bg1.jpg'); }
+      33% { background-image: url('bg2.jpg'); }
+      66% { background-image: url('bg3.jpg'); }
+      100% { background-image: url('bg1.jpg'); }
+    }
+
+    .about h2, .about img, .about .desc {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.8);
+      z-index: 0;
+    }
+
     .about img {
       width: 300px;
       height: auto;
@@ -200,6 +226,11 @@
       font-size: 1.1em;
       color: #333;
       line-height: 1.6;
+    }
+
+    .twnas-info {
+      background: linear-gradient(135deg, #ffffff, #e3f2fd);
+      color: #1e3c72;
     }
 
     .closing {
@@ -327,7 +358,7 @@
 
     <nav id="nav-menu">
       <a href="#">Home</a>
-      <a href="#about">Tentang Kami</a> <!-- ✅ diarahkan ke ID -->
+      <a href="#about">Tentang Kami</a>
       <a href="#info">Informasi</a>
       <a href="#">Kontak</a>
       <button class="btn-registrasi" id="popupBtn">Registrasi</button>
@@ -340,26 +371,20 @@
     <p>Website resmi acara Temu Wicara Nasional FKMTSI ke-35 yang memuat seluruh informasi dan keperluan teknis selama kegiatan berlangsung.</p>
   </div>
 
-  <!-- ✅ Section Tentang Kami -->
-<section class="about" id="about">
-  <h2>Tentang Kami</h2>
-  <img src="about.jpg" alt="Foto Kegiatan TWNAS" /> <!-- ✅ Gambar -->
-  <div class="desc">
-    <p>
-      <strong>APA ITU FKMTSI?</strong><br>
+  <section class="about" id="about">
+    <h2>Tentang Kami</h2>
+    <img src="about.jpg" alt="Foto Kegiatan TWNAS" />
+    <div class="desc">
+      <p><strong>APA ITU FKMTSI?</strong><br>
       Forum Komunikasi Mahasiswa Teknik Sipil Indonesia (FKMTSI) adalah organisasi kemahasiswaan Teknik Sipil atau organisasi kemahasiswaan 
       pada program studi Teknik Sipil yang diakui oleh masing-masing Perguruan Tinggi Se-Indonesia. FKMTSI dideklarasikan pada tanggal 24 Desember 1987 
-      di Bandung dan disahkan pada tanggal 1 Maret 1989 di Jakarta dan untuk waktu yang tidak ditentukan. FKMTSI berfungsi sebagai wadah komunikasi.
-    </p>
+      di Bandung dan disahkan pada tanggal 1 Maret 1989 di Jakarta dan untuk waktu yang tidak ditentukan. FKMTSI berfungsi sebagai wadah komunikasi.</p>
 
-    <p>
-      <strong>Tujuan:</strong><br>
-      Tujuan FKMTSI Menyatukan persepsi dan pemikiran tentang Teknik Sipil Indonesia, mengambil bagian dan berperan aktif dalam 
-      setiap usaha pembangunan nasional, meningkatkan kiprah Mahasiswa Teknik Sipil untuk mewujudkan sifat mandiri dan profesional.
-    </p>
-  </div>
-</section>
-
+      <p><strong>Tujuan:</strong><br>
+      Tujuan FKMTSI Menyatukan persepsi dan pemikiran tentang Teknik Sipil Indonesia, mengambil bagian dan berperan aktif dalam setiap usaha pembangunan nasional, 
+      meningkatkan kiprah Mahasiswa Teknik Sipil untuk mewujudkan sifat mandiri dan profesional.</p>
+    </div>
+  </section>
 
   <section class="twnas-info" id="info">
     <h2>📣 Informasi Kegiatan</h2>
