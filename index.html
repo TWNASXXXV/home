@@ -633,17 +633,17 @@
             nav a { color: white !important; }
         }
 
-        /* ===== PAGE 4 (MASKOT ELEGAN TRANSPARAN) ===== */
+        /* ===== PAGE 4 (MASKOT PREMIUM ESTETIK) ===== */
         .page4 {
             min-height: 100vh;
-            padding: 100px 20px;
-            background: rgba(0, 0, 0, 0.15); /* Gelap samar */
-            backdrop-filter: blur(6px);
+            padding: 110px 20px;
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(8px);
             display: flex;
             justify-content: center;
             align-items: center;
             opacity: 0;
-            transform: translateY(60px);
+            transform: translateY(50px);
             transition: 1s ease;
         }
         
@@ -653,146 +653,184 @@
         }
         
         .page4-container {
-            width: 90%;
-            max-width: 1250px;
-            padding: 50px;
-            border-radius: 25px;
+            width: 92%;
+            max-width: 1280px;
+            padding: 55px;
+            border-radius: 28px;
         
-            /* Efek glass */
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
+            /* Glassmorphism premium */
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(18px);
+            border: 1.7px solid rgba(255, 191, 0, 0.45);
+        
+            /* Gold Glow */
+            box-shadow:
+                0 0 25px rgba(255, 199, 0, 0.25),
+                0 18px 45px rgba(0, 0, 0, 0.45);
         
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 50px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+            gap: 60px;
+        
+            position: relative;
+            overflow: hidden;
         }
         
+        /* Spotlight Gold */
+        .page4-container::before {
+            content: "";
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(255,200,0,0.25), transparent 70%);
+            filter: blur(50px);
+            opacity: 0.8;
+        }
+        
+        /* TEXT */
         .page4-text {
             flex: 1.2;
+            z-index: 2;
         }
         
         .page4-title {
-            font-size: 3rem;
-            font-weight: 750;
-            color: #ffffff;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            margin-bottom: 22px;
+            font-size: 3.3rem;
+            font-weight: 800;
+            color: #ffcc33; /* Kuning premium */
+            text-shadow: 
+                0 3px 12px rgba(0, 0, 0, 0.55),
+                0 3px 18px rgba(255, 204, 51, 0.35);
+            margin-bottom: 25px;
         }
         
         .page4-desc {
-            font-size: 18px;
+            font-size: 19px;
             line-height: 1.8;
-            color: #eaeaea;
-            margin-bottom: 35px;
+            color: #f1f1f1;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.35);
         }
         
-        /* Tombol */
+        /* BUTTON */
         .btn-filosofi {
-            padding: 14px 34px;
-            background: #cf6d00;
+            padding: 15px 38px;
+            background: linear-gradient(135deg, #ff9d00, #cc6b00);
             color: white;
-            font-size: 17px;
-            border-radius: 12px;
+            font-size: 18px;
+            border-radius: 14px;
             border: none;
             cursor: pointer;
-            transition: 0.3s;
-            font-weight: 600;
+            transition: 0.3s ease;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
         }
         
         .btn-filosofi:hover {
-            background: #a55300;
-            transform: translateY(-3px);
+            background: linear-gradient(135deg, #ffb733, #c77300);
+            transform: translateY(-4px);
         }
         
-        /* Gambar Maskot */
+        /* IMAGE */
         .page4-image img {
-            width: 380px;
+            width: 420px;
             max-width: 100%;
-            filter: drop-shadow(0 10px 28px rgba(0,0,0,0.4));
-            transition: 0.3s ease;
-            border-radius: 12px;
+            filter: drop-shadow(0 12px 40px rgba(0,0,0,0.55));
+            border-radius: 14px;
+            transition: 0.4s ease;
+            animation: floatMascot 4s ease-in-out infinite;
+        }
+        
+        /* Floating Effect */
+        @keyframes floatMascot {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
         }
         
         .page4-image img:hover {
-            transform: scale(1.07);
+            transform: scale(1.06);
         }
         
         /* ===== POPUP FILOSOFI ===== */
         .popup-filosofi {
             display: none;
             position: fixed;
-            z-index: 9999;
             inset: 0;
             background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(6px);
+            z-index: 9999;
             justify-content: center;
             align-items: center;
-            padding: 25px;
+            padding: 30px;
         }
         
         .popup-filosofi-content {
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(12px);
-            border-radius: 18px;
-            padding: 30px;
             width: 85%;
-            max-width: 900px;
-            border: 1px solid rgba(255,255,255,0.25);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            max-width: 950px;
+            padding: 40px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 18px;
+            border: 1.7px solid rgba(255, 191, 0, 0.45);
+            backdrop-filter: blur(16px);
+            box-shadow:
+                0 0 25px rgba(255, 199, 0, 0.3),
+                0 12px 35px rgba(0,0,0,0.55);
             position: relative;
-            animation: fadeIn 0.4s ease;
+            animation: fadeIn 0.35s ease;
         }
         
         .popup-title {
             font-size: 28px;
             font-weight: 700;
-            margin-bottom: 25px;
-            color: white;
+            color: #ffcc33;
             text-align: center;
+            margin-bottom: 20px;
         }
         
         /* Close button */
         .close-filosofi {
             position: absolute;
-            top: 12px;
+            top: 14px;
             right: 20px;
-            font-size: 34px;
+            font-size: 38px;
             cursor: pointer;
             color: white;
             font-weight: bold;
         }
         
-        /* Gambar popup */
+        /* Scrollable image */
         .popup-image-wrapper {
-            max-height: 70vh;
+            max-height: 73vh;
             overflow-y: auto;
             padding-right: 10px;
         }
         
         .popup-image {
             width: 100%;
-            border-radius: 12px;
+            border-radius: 14px;
         }
         
-        /* Responsive */
+        /* RESPONSIVE */
         @media (max-width: 900px) {
             .page4-container {
                 flex-direction: column-reverse;
+                padding: 45px;
                 text-align: center;
-                padding: 40px;
             }
         
             .page4-title {
-                font-size: 2.4rem;
+                font-size: 2.6rem;
             }
         
             .page4-image img {
                 width: 260px;
             }
         }
+
 
         
     </style>
