@@ -632,6 +632,152 @@
             nav.active { transform: translateY(0); }
             nav a { color: white !important; }
         }
+
+        /* ===== PAGE 4 ===== */
+        .page4 {
+            min-height: 100vh;
+            padding: 80px 20px;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: 1s ease;
+        }
+        
+        .page4.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .page4-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            width: 100%;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .page4-text {
+            flex: 1;
+            min-width: 320px;
+        }
+        
+        .page4-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2e2e2e;
+            margin-bottom: 20px;
+        }
+        
+        .page4-desc {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 30px;
+        }
+        
+        .btn-filosofi {
+            padding: 12px 26px;
+            background: #c65a00;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .btn-filosofi:hover {
+            background: #a34900;
+            transform: translateY(-3px);
+        }
+        
+        /* Gambar maskot */
+        .page4-image img {
+            width: 330px;
+            max-width: 100%;
+            filter: drop-shadow(0 8px 25px rgba(0,0,0,0.25));
+            transition: 0.3s;
+        }
+        
+        .page4-image img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* ===== POPUP FILOSOFI ===== */
+        .popup-filosofi {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(3px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .popup-filosofi-content {
+            background: #fff;
+            width: 80%;
+            max-width: 950px;
+            border-radius: 14px;
+            padding: 25px;
+            position: relative;
+            animation: fadeIn 0.4s ease;
+        }
+        
+        .popup-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        /* Close button */
+        .close-filosofi {
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            font-size: 32px;
+            cursor: pointer;
+            color: #333;
+        }
+        
+        .popup-image-wrapper {
+            max-height: 70vh;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        
+        .popup-image {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        /* responsive */
+        @media (max-width: 900px) {
+            .page4-container {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+        
+            .page4-title {
+                font-size: 2.4rem;
+            }
+        
+            .page4-image img {
+                width: 260px;
+            }
+        }
+
+        
     </style>
 </head>
 <body>
@@ -649,8 +795,8 @@
         <nav id="nav-menu">
             <a href="#">Home</a>
             <a href="#about">Tentang Kami</a>
-            <a href="#info">Informasi</a>
-            <a href="#">Kontak</a>
+            <a href="#info">Bantuan Bob!</a>
+            <a href="#">Lainnya</a>
             <button class="btn-registrasi" id="popupBtn">Registrasi</button>
         </nav>
     </header>
@@ -818,6 +964,47 @@
         </div>
     </div>
 
+    <!-- ===== PAGE 4 - MASKOT ===== -->
+        <section class="page4" id="page4">
+            <div class="page4-container">
+                
+                <!-- Kiri: Penjelasan -->
+                <div class="page4-text">
+                    <h2 class="page4-title">Maskot Resmi</h2>
+                    <p class="page4-desc">
+                        Maskot resmi TWNAS XXXV menggambarkan karakter yang kuat, bersahabat, dan penuh semangat.
+                        Maskot ini menjadi simbol identitas yang merepresentasikan kebudayaan dan semangat 
+                        mahasiswa Teknik Sipil Indonesia.
+                    </p>
+        
+                    <button class="btn-filosofi" id="openFilosofi">
+                        Lihat Filosofi Maskot →
+                    </button>
+                </div>
+        
+                <!-- Kanan: Gambar Maskot -->
+                <div class="page4-image">
+                    <img src="maskot.png" alt="Maskot TWNAS" />
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== POPUP FILOSOFI MASKOT ===== -->
+        <div class="popup-filosofi" id="popupFilosofi">
+            <div class="popup-filosofi-content">
+                <span class="close-filosofi" id="closeFilosofi">&times;</span>
+        
+                <h2 class="popup-title">Filosofi Maskot</h2>
+        
+                <div class="popup-image-wrapper">
+                    <img src="filosofi-maskot.png" class="popup-image" alt="Filosofi Maskot">
+                </div>
+            </div>
+        </div>
+
+
+    
+
     <audio id="bgMusic" autoplay loop muted>
         <source src="musik.mp3" type="audio/mpeg">
     </audio>
@@ -898,6 +1085,19 @@
         window.addEventListener("load", () => setTimeout(() => autoPopup.classList.add("active"), 600));
         closeAuto.addEventListener("click", () => autoPopup.classList.remove("active"));
         autoPopup.addEventListener("click", e => { if (e.target === autoPopup) autoPopup.classList.remove("active"); });
+
+        // Popup Filosofi Maskot
+        const popupFilosofi = document.getElementById("popupFilosofi");
+        const openFilosofi = document.getElementById("openFilosofi");
+        const closeFilosofi = document.getElementById("closeFilosofi");
+        
+        openFilosofi.onclick = () => popupFilosofi.style.display = "flex";
+        closeFilosofi.onclick = () => popupFilosofi.style.display = "none";
+        
+        window.onclick = (e) => {
+            if (e.target === popupFilosofi) popupFilosofi.style.display = "none";
+        };
+
 
         // POPUP PERJALANAN
         const popupPerjalanan = document.getElementById("popupPerjalanan");
