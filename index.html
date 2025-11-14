@@ -830,6 +830,88 @@
                 width: 260px;
             }
         }
+        /* ---------- PAGE 5 ---------- */
+        .page5 {
+          padding: 60px 20px;
+          background: #f7faff; /* putih kebiruan lembut */
+          display: flex;
+          justify-content: center;
+        }
+        
+        .reg-container {
+          max-width: 900px;
+          background: white;
+          padding: 40px;
+          border-radius: 15px;
+          box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Judul */
+        .reg-title {
+          text-align: center;
+          font-size: 45px;
+          font-weight: 700;
+          color: #f4d03f; /* kuning estetis */
+        }
+        
+        .reg-subtitle {
+          text-align: center;
+          font-size: 18px;
+          margin-top: 10px;
+          margin-bottom: 35px;
+          color: #333;
+        }
+        
+        /* Langkah registrasi */
+        .reg-steps .step {
+          margin-bottom: 25px;
+        }
+        
+        .reg-steps .step h3 {
+          font-size: 22px;
+          color: #1e3c72;
+          margin-bottom: 8px;
+        }
+        
+        .reg-steps .step p {
+          font-size: 16px;
+          color: #444;
+          line-height: 1.6;
+        }
+        
+        /* Tombol Registrasi */
+        .reg-buttons {
+          margin-top: 40px;
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+        
+        /* DESAIN TOMBOL */
+        .reg-buttons a {
+          padding: 15px 30px;
+          font-size: 18px;
+          border-radius: 10px;
+          cursor: pointer;
+          font-weight: 600;
+          transition: 0.3s;
+          text-decoration: none;
+          color: white;
+        
+          /* efek modern */
+          box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        /* Warna tombol */
+        .reg-btn.peserta { background: #1e88e5; }
+        .reg-btn.wilayah { background: #43a047; }
+        .reg-btn.bayar   { background: #f57c00; }
+        
+        /* Hover */
+        .reg-btn.peserta:hover { background: #1565c0; transform: scale(1.05); }
+        .reg-btn.wilayah:hover { background: #2e7d32; transform: scale(1.05); }
+        .reg-btn.bayar:hover   { background: #ef6c00; transform: scale(1.05); }
 
 
         
@@ -1045,6 +1127,80 @@
                 </div>
             </div>
         </div>
+
+    <!-- ===== PAGE 5 -    REGISTRASI ===== -->
+        <section id="page5" class="page5">
+  <div class="reg-container">
+
+        <h2 class="reg-title">REGISTRASI TWNAS XXXV</h2>
+        <p class="reg-subtitle">Ikuti langkah-langkah dibawah ini untuk melakukan registrasi</p>
+    
+        <div class="reg-steps">
+    
+          <div class="step">
+            <h3>1. Persyaratan Utama</h3>
+            <p>
+              Pastikan Anda merupakan mahasiswa aktif yang terdiri dari perwakilan 
+              perguruan tinggi Teknik Sipil di seluruh Indonesia yang berjumlah 343 perguruan tinggi, 
+              terbagi dalam 17 wilayah regional Forum Komunikasi Mahasiswa Teknik Sipil Indonesia.
+            </p>
+          </div>
+    
+          <div class="step">
+            <h3>2. Tenggat Registrasi</h3>
+            <p>
+              Peserta wajib melakukan registrasi paling lambat 2 minggu sebelum acara dimulai 
+              atau melakukan registrasi di tempat pada hari kedatangan.
+            </p>
+          </div>
+    
+          <div class="step">
+            <h3>3. Biaya Registrasi</h3>
+            <p>
+              Registrasi Peserta: <b>Rp 400.000,-</b> per peserta <br>
+              Registrasi Wilayah: <b>Rp 300.000,-</b> per wilayah
+            </p>
+          </div>
+    
+          <div class="step">
+            <h3>4. Pembayaran Registrasi</h3>
+            <p>
+              Pembayaran dapat dilakukan melalui rekening <br>
+              <b>Bank KALTIMTARA</b> <br>
+              No. Rek: <b>1277390431</b> <br>
+              a.n. <b>JOANNA GABRIELA PRASETYO</b>.
+            </p>
+          </div>
+    
+          <div class="step">
+            <h3>5. Kirim Bukti Pembayaran</h3>
+            <p>
+              Setelah melakukan pembayaran, peserta harap mengirim bukti pembayaran registrasi 
+              melalui platform yang telah disediakan di bawah ini.
+            </p>
+          </div>  
+        </div>
+    
+        <!-- TOMBOL DENGAN LINK ASLI -->
+        <div class="reg-buttons">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZIDdMRDhPvZxiH_0qB_FBZBlcm14madI0kJa0jQ2ykP2Fpw/viewform?usp=header" 
+             target="_blank" class="reg-btn peserta">
+            Registrasi Peserta
+          </a>
+    
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfaScXWKNVeo1lDzevqybCCqjKpt7p_GMmX7WgtS3dtD1Lk4g/viewform?usp=header" 
+             target="_blank" class="reg-btn wilayah">
+            Registrasi Wilayah
+          </a>
+    
+          <a href="https://wa.me/62882022775388" 
+             target="_blank" class="reg-btn bayar">
+            Konfirmasi Pembayaran
+          </a>
+        </div>
+    
+      </div>
+    </section>
 
     <footer>© 2025 TWNAS XXXV | FKMTSI Indonesia. All Rights Reserved.</footer>
 
