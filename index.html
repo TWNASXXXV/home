@@ -633,11 +633,12 @@
             nav a { color: white !important; }
         }
 
-        /* ===== PAGE 4 ===== */
+        /* ===== PAGE 4 (MASKOT ELEGAN TRANSPARAN) ===== */
         .page4 {
             min-height: 100vh;
-            padding: 80px 20px;
-            background: #ffffff;
+            padding: 100px 20px;
+            background: rgba(0, 0, 0, 0.15); /* Gelap samar */
+            backdrop-filter: blur(6px);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -652,60 +653,71 @@
         }
         
         .page4-container {
+            width: 90%;
+            max-width: 1250px;
+            padding: 50px;
+            border-radius: 25px;
+        
+            /* Efek glass */
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            max-width: 1200px;
-            width: 100%;
-            gap: 60px;
-            flex-wrap: wrap;
+            gap: 50px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
         }
         
         .page4-text {
-            flex: 1;
-            min-width: 320px;
+            flex: 1.2;
         }
         
         .page4-title {
             font-size: 3rem;
-            font-weight: 700;
-            color: #2e2e2e;
-            margin-bottom: 20px;
+            font-weight: 750;
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            margin-bottom: 22px;
         }
         
         .page4-desc {
-            font-size: 17px;
+            font-size: 18px;
             line-height: 1.8;
-            color: #444;
-            margin-bottom: 30px;
+            color: #eaeaea;
+            margin-bottom: 35px;
         }
         
+        /* Tombol */
         .btn-filosofi {
-            padding: 12px 26px;
-            background: #c65a00;
+            padding: 14px 34px;
+            background: #cf6d00;
             color: white;
-            font-size: 16px;
-            border-radius: 8px;
+            font-size: 17px;
+            border-radius: 12px;
             border: none;
             cursor: pointer;
             transition: 0.3s;
+            font-weight: 600;
         }
         
         .btn-filosofi:hover {
-            background: #a34900;
+            background: #a55300;
             transform: translateY(-3px);
         }
         
-        /* Gambar maskot */
+        /* Gambar Maskot */
         .page4-image img {
-            width: 330px;
+            width: 380px;
             max-width: 100%;
-            filter: drop-shadow(0 8px 25px rgba(0,0,0,0.25));
-            transition: 0.3s;
+            filter: drop-shadow(0 10px 28px rgba(0,0,0,0.4));
+            transition: 0.3s ease;
+            border-radius: 12px;
         }
         
         .page4-image img:hover {
-            transform: scale(1.05);
+            transform: scale(1.07);
         }
         
         /* ===== POPUP FILOSOFI ===== */
@@ -713,43 +725,47 @@
             display: none;
             position: fixed;
             z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.65);
-            backdrop-filter: blur(3px);
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(5px);
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 25px;
         }
         
         .popup-filosofi-content {
-            background: #fff;
-            width: 80%;
-            max-width: 950px;
-            border-radius: 14px;
-            padding: 25px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(12px);
+            border-radius: 18px;
+            padding: 30px;
+            width: 85%;
+            max-width: 900px;
+            border: 1px solid rgba(255,255,255,0.25);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
             position: relative;
             animation: fadeIn 0.4s ease;
         }
         
         .popup-title {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            color: white;
+            text-align: center;
         }
         
         /* Close button */
         .close-filosofi {
             position: absolute;
             top: 12px;
-            right: 18px;
-            font-size: 32px;
+            right: 20px;
+            font-size: 34px;
             cursor: pointer;
-            color: #333;
+            color: white;
+            font-weight: bold;
         }
         
+        /* Gambar popup */
         .popup-image-wrapper {
             max-height: 70vh;
             overflow-y: auto;
@@ -758,14 +774,15 @@
         
         .popup-image {
             width: 100%;
-            border-radius: 10px;
+            border-radius: 12px;
         }
         
-        /* responsive */
+        /* Responsive */
         @media (max-width: 900px) {
             .page4-container {
                 flex-direction: column-reverse;
                 text-align: center;
+                padding: 40px;
             }
         
             .page4-title {
@@ -867,13 +884,6 @@
         </div>
     </section>
 
-
-    <section class="closing">
-        <h2>Terima Kasih Telah Mengunjungi</h2>
-        <p>Sampai jumpa di TWNAS XXXV 2025 - Wilayah X!</p>
-    </section>
-
-    <footer>© 2025 TWNAS XXXV | FKMTSI Indonesia. All Rights Reserved.</footer>
 
     <div class="popup" id="popupRegistrasi">
         <div class="popup-content">
@@ -1002,8 +1012,7 @@
             </div>
         </div>
 
-
-    
+    <footer>© 2025 TWNAS XXXV | FKMTSI Indonesia. All Rights Reserved.</footer>
 
     <audio id="bgMusic" autoplay loop muted>
         <source src="musik.mp3" type="audio/mpeg">
