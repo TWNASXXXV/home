@@ -1207,44 +1207,45 @@
         </div>
     </section>
 
+                <!-- ===== PAGE 4 - MASKOT ===== -->
+        <section class="page4" id="info">
+            <div class="page4-container">
+                
+                <!-- Kiri: Penjelasan -->
+                <div class="page4-text">
+                    <h2 class="page4-title">Hai, aku adalah <br>"SI BOB"</h2>
+                    <p class="page4-desc">
+                        Si bob adalah kepanjangan dari “ Bird of Borneo” atau burung dari pulau borneo, ini adalah burung endemik di kalimantan yaitu “ Burung enggang gading/rangkok badak’ yang hanya dijumpai di wilayah kalimantan dan terancam punah 
+                    </p>
+        
+                    <button class="btn-filosofi" id="openFilosofi">
+                        Lihat Filosofi Maskot →
+                    </button>
+                </div>
+        
+                <!-- Kanan: Gambar Maskot -->
+                <div class="page4-image">
+                    <img src="maskot.png" alt="Maskot TWNAS" />
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== POPUP FILOSOFI MASKOT ===== -->
+        <div class="popup-filosofi" id="popupFilosofi">
+            <div class="popup-filosofi-content">
+                <span class="close-filosofi" id="closeFilosofi">&times;</span>
+        
+                <h2 class="popup-title">Filosofi Maskot</h2>
+        
+                <div class="popup-image-wrapper">
+                    <img src="filosofi-maskot.png" class="popup-image" alt="Filosofi Maskot">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>© 2025 TWNAS XXXV | FKMTSI Indonesia. All Rights Reserved.</footer>
-
-    <audio id="bgMusic" autoplay loop muted>
-        <source src="musik.mp3" type="audio/mpeg">
-    </audio>
-
-    <script>
-        const bgMusic = document.getElementById('bgMusic');
-
-        // Set volume agar tidak terlalu keras
-        bgMusic.volume = 0.2;
-
-        // Pastikan tetap looping
-        bgMusic.addEventListener('ended', () => {
-            bgMusic.currentTime = 0;
-            bgMusic.play();
-        });
-
-        // Aktifkan suara saat pengguna pertama kali klik halaman
-        document.addEventListener('click', function enableAudio() {
-            if (bgMusic.muted) {
-                bgMusic.muted = false;
-                bgMusic.play().catch(() => {}); // mencegah error autoplay
-            }
-            document.removeEventListener('click', enableAudio);
-        });
-
-        // Pause otomatis ketika tab tidak aktif, resume saat kembali
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                bgMusic.pause();
-            } else {
-                bgMusic.play().catch(() => {});
-            }
-        });
-    </script>
-
-
+    
     <script>
         const header = document.getElementById("header");
         window.addEventListener("scroll", () => header.classList.toggle("scrolled", window.scrollY > 50));
