@@ -1128,7 +1128,7 @@
 }
 
 
-/* ===== PAGE 8 (OUR TEAM) ===== */
+/* ===== PAGE 8 (OUR TEAM) — FINAL ===== */
 .ourteam-section {
     background: #ffffff;
     padding: 80px 20px;
@@ -1148,11 +1148,12 @@
     margin-bottom: 50px;
 }
 
-/* Grid 4 kolom desktop */
+/* Grid Desktop (4 kolom) */
 .ourteam-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+    overflow: visible !important;     /* FIX HP */
 }
 
 /* Card */
@@ -1171,7 +1172,7 @@
 /* Logo */
 .team-card img {
     width: 100%;
-    height: 160px;
+    max-height: 160px;
     object-fit: contain;
     margin-bottom: 15px;
 }
@@ -1200,26 +1201,45 @@
     background: #cf6700;
 }
 
-/* Responsive Tablet */
+/* ==== Responsive Tablet ==== */
 @media (max-width: 992px) {
     .ourteam-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 25px;
     }
 }
 
-/* Responsive Mobile */
+/* ==== Responsive Mobile ==== */
 @media (max-width: 768px) {
+    .ourteam-section {
+        padding: 60px 15px;
+    }
+
     .ourteam-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
+
+    .team-card {
+        padding: 20px;
+    }
+
+    .team-card img {
+        max-height: 140px !important;
     }
 }
 
-/* Mobile kecil */
+/* ==== Mobile Kecil ==== */
 @media (max-width: 480px) {
     .ourteam-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+    }
+
+    .team-card img {
+        max-height: 120px;
     }
 }
+
 
         /* ===== PAGE LAST (CONTACT PERSON) ===== */
 .contact-section {
