@@ -1043,13 +1043,18 @@
     text-shadow: 0 0 8px rgba(255,255,255,0.25);
 }
 
-/* ===== PAGE 6 (LOKASI PENJEMPUTAN) ===== */
+/* ============================================================
+   PAGE 6 — LOKASI PENJEMPUTAN
+   ============================================================ */
 
 /* Section Container */
 .pickup-section {
     background: #ffffff; 
     padding: 80px 20px;
     text-align: center;
+
+    /* FIX: Agar PAGE 8 tidak tertutup saat di mobile */
+    padding-bottom: 120px;
 }
 
 /* Title */
@@ -1063,7 +1068,7 @@
 /* Subtitle */
 .pickup-subtitle {
     font-size: 18px;
-    color: #444; /* lebih terlihat di background putih */
+    color: #444; 
     opacity: 0.9;
     margin-bottom: 45px;
 }
@@ -1114,7 +1119,7 @@
     font-size: 24px;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE — PAGE 6 */
 @media (max-width: 992px) {
     .pickup-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1130,10 +1135,19 @@
     .pickup-title {
         font-size: 32px;
     }
+
+    /* FIX tambahan agar tidak menutup page 8 */
+    .pickup-section {
+        padding-bottom: 160px;
+    }
 }
 
 
-/* ===== PAGE 8 (OUR TEAM) — FINAL ===== */
+
+/* ============================================================
+   PAGE 8 — OUR TEAM (FINAL)
+   ============================================================ */
+
 .ourteam-section {
     background: #ffffff;
     padding: 80px 20px;
@@ -1158,7 +1172,9 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    overflow: visible !important;     /* FIX HP */
+
+    /* FIX tampilan HP */
+    overflow: visible !important;
 }
 
 /* Card */
@@ -1206,7 +1222,7 @@
     background: #cf6700;
 }
 
-/* ==== Responsive Tablet ==== */
+/* RESPONSIVE — PAGE 8 */
 @media (max-width: 992px) {
     .ourteam-grid {
         grid-template-columns: repeat(3, 1fr) !important;
@@ -1214,7 +1230,6 @@
     }
 }
 
-/* ==== Responsive Mobile ==== */
 @media (max-width: 768px) {
     .ourteam-section {
         padding: 60px 15px;
@@ -1234,7 +1249,6 @@
     }
 }
 
-/* ==== Mobile Kecil ==== */
 @media (max-width: 480px) {
     .ourteam-grid {
         grid-template-columns: 1fr !important;
@@ -1244,6 +1258,7 @@
         max-height: 120px;
     }
 }
+
 
 
         /* ===== PAGE LAST (CONTACT PERSON) ===== */
