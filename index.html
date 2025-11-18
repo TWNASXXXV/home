@@ -1042,79 +1042,91 @@
 
 /* Section Container */
 .pickup-section {
-    background: #3a1e0f; /* warna background */
+    background: #ffffff; 
     padding: 80px 20px;
     text-align: center;
 }
 
 /* Title */
 .pickup-title {
-    font-size: 36px;
-    font-weight: 800;
-    color: #f8c24f;
-    margin-bottom: 10px;
+    font-size: 40px;
+    font-weight: 900;
+    color: #d18800; /* emas estetik */
+    margin-bottom: 12px;
 }
 
 /* Subtitle */
 .pickup-subtitle {
     font-size: 18px;
-    color: #ffffff;
-    opacity: 0.85;
-    margin-bottom: 40px;
+    color: #444; /* lebih terlihat di background putih */
+    opacity: 0.9;
+    margin-bottom: 45px;
 }
 
-/* Grid 3 x 2 */
+/* Grid 3 kolom */
 .pickup-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    justify-content: center;
+    gap: 32px;
 }
 
 /* Card Style */
 .pickup-card {
     background: #ffffff;
-    border-radius: 16px;
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.10);
     transition: 0.3s ease;
 }
 
 .pickup-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
-/* Image Card */
+/* Image */
 .pickup-card img {
     width: 100%;
-    height: 180px;
+    height: 185px;
     object-fit: cover;
 }
 
-/* Info Section */
+/* Text Area */
 .pickup-info {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 15px 20px;
+    gap: 10px;
+    padding: 18px 22px;
     font-size: 18px;
     font-weight: 700;
-    color: #222;
+    color: #333;
 }
 
 /* Icon Lokasi */
 .pickup-icon {
-    color: #ff6600;
-    font-size: 22px;
+    color: #e85a13;
+    font-size: 24px;
 }
 
-/* Responsif HP */
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .pickup-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .pickup-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 22px;
+    }
+
+    .pickup-title {
+        font-size: 32px;
     }
 }
+
 
 /* ===== PAGE 8 (OUR TEAM) ===== */
 .ourteam-section {
@@ -1176,7 +1188,7 @@
 .team-btn {
     display: inline-block;
     padding: 10px 20px;
-    background: #e1306c;
+    background: #fa7d00;
     color: white;
     border-radius: 8px;
     font-weight: 700;
@@ -1185,7 +1197,7 @@
 }
 
 .team-btn:hover {
-    background: #b82455;
+    background: #cf6700;
 }
 
 /* Responsive Tablet */
@@ -1622,7 +1634,7 @@
 <section class="ourteam-section">
     <h2 class="ourteam-title">Our Team</h2>
     <p class="ourteam-subtitle">
-        Berikut adalah 24 himpunan mahasiswa teknik sipil yang menjadi bagian dari wilayah 2.
+        Berikut himpunan mahasiswa teknik sipil yang menjadi bagian dari wilayah x.
     </p>
 
     <div class="ourteam-grid">
