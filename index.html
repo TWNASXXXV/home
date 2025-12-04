@@ -763,35 +763,58 @@
 
 
         
-        /* ===== POPUP FILOSOFI ===== */
-        .popup-filosofi {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(6px);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
-        }
-        
-        .popup-filosofi-content {
-            width: 85%;
-            max-width: 950px;
-            padding: 40px;
-            background: rgba(255,255,255,0.12);
-            border-radius: 18px;
-            border: 1.7px solid rgba(255, 191, 0, 0.45);
-            backdrop-filter: blur(16px);
-            box-shadow:
-                0 0 25px rgba(255, 199, 0, 0.3),
-                0 12px 35px rgba(0,0,0,0.55);
-            position: relative;
-            animation: fadeIn 0.35s ease;
-        }
+/* ============== POPUP FILOSOFI SI BOB ============== */
+.popup-filosofi {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
 
-        .popup-buttons {
+/* WAJIB ADA — INI YANG MEMBUAT POPUP MUNCUL */
+.popup-filosofi.active {
+    display: flex !important;
+}
+
+.popup-filosofi-content {
+    width: 85%;
+    max-width: 950px;
+    padding: 40px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 18px;
+    border: 1.7px solid rgba(255, 191, 0, 0.45);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 0 25px rgba(255, 199, 0, 0.3), 0 12px 35px rgba(0,0,0,0.55);
+    position: relative;
+    animation: fadeIn 0.35s ease;
+}
+
+.popup-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffcc33;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Close button */
+.close-filosofi {
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    font-size: 38px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+/* Buttons */
+.popup-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
@@ -815,54 +838,6 @@
     transform: translateY(-2px);
 }
 
-        
-        .popup-title {
-            font-size: 28px;
-            font-weight: 700;
-            color: #ffcc33;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        /* Close button */
-        .close-filosofi {
-            position: absolute;
-            top: 14px;
-            right: 20px;
-            font-size: 38px;
-            cursor: pointer;
-            color: white;
-            font-weight: bold;
-        }
-        
-        /* Scrollable image */
-        .popup-image-wrapper {
-            max-height: 73vh;
-            overflow-y: auto;
-            padding-right: 10px;
-        }
-        
-        .popup-image {
-            width: 100%;
-            border-radius: 14px;
-        }
-        
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .page4-container {
-                flex-direction: column-reverse;
-                padding: 45px;
-                text-align: center;
-            }
-        
-            .page4-title {
-                font-size: 2.6rem;
-            }
-        
-            .page4-image img {
-                width: 260px;
-            }
-        }
         /* ---------- PAGE 5 ---------- */
         .page5 {
           padding: 60px 20px;
@@ -1661,7 +1636,7 @@
                 Si bob adalah kepanjangan dari “ Bird of Borneo” atau burung dari pulau borneo, ini adalah burung endemik di kalimantan yaitu “ Burung enggang gading/rangkok badak’ yang hanya dijumpai di wilayah kalimantan dan terancam punah 
             </p>
 
-            <button class="btn-filosofi" id="openFilosofi">
+            <button class="btn-filosofi" id="openFilosofiBob">
                 Lihat hasil Dokumentasi Bob →
             </button>
         </div>
@@ -1673,7 +1648,7 @@
     </div>
 </section>
 
-<!-- ===== POPUP DOKUMENTASI SI BOB (FINAL) ===== -->
+<!-- ===== POPUP DOKUMENTASI SI BOB ===== -->
 <div class="popup-filosofi" id="popupFilosofiBob">
     <div class="popup-filosofi-content">
         <span class="close-filosofi" id="closeFilosofiBob">&times;</span>
@@ -1681,13 +1656,13 @@
         <h2 class="popup-title">Filosofi & Link Si Bob</h2>
 
         <div class="popup-buttons">
-            <a href="https://link1.example.com" target="_blank" class="popup-button">Link 1</a>
-            <a href="https://link2.example.com" target="_blank" class="popup-button">Link 2</a>
-            <a href="https://link3.example.com" target="_blank" class="popup-button">Link 3</a>
-            <a href="https://link4.example.com" target="_blank" class="popup-button">Link 4</a>
-            <a href="https://link5.example.com" target="_blank" class="popup-button">Link 5</a>
-            <a href="https://link6.example.com" target="_blank" class="popup-button">Link 6</a>
-            <a href="https://link7.example.com" target="_blank" class="popup-button">Link 7</a>
+            <a href="#" target="_blank" class="popup-button">Link 1</a>
+            <a href="#" target="_blank" class="popup-button">Link 2</a>
+            <a href="#" target="_blank" class="popup-button">Link 3</a>
+            <a href="#" target="_blank" class="popup-button">Link 4</a>
+            <a href="#" target="_blank" class="popup-button">Link 5</a>
+            <a href="#" target="_blank" class="popup-button">Link 6</a>
+            <a href="#" target="_blank" class="popup-button">Link 7</a>
         </div>
     </div>
 </div>
@@ -2015,7 +1990,7 @@
 
     <footer>© 2025 TWNAS XXXV | FKMTSI Indonesia. All Rights Reserved.</footer>
     
-   <script>
+<script>
     // --- HEADER SCROLL EFFECT ---
     const header = document.getElementById("header");
     window.addEventListener("scroll", () => header.classList.toggle("scrolled", window.scrollY > 50));
@@ -2074,7 +2049,8 @@
     }
 
     // 4. POPUP FILOSOFI MASKOT (KHUSUS PAGE 4)
-    setupPopup("openFilosofi", "popupFilosofiBob", "closeFilosofiBob");
+    // >> INI PERBAIKAN YANG SEBENARNYA <<
+    setupPopup("openFilosofiBob", "popupFilosofiBob", "closeFilosofiBob");
 
     // ============================================================
     // SECTION ANIMATIONS
@@ -2098,5 +2074,6 @@
         menuToggle.addEventListener("click", () => navMenu.classList.toggle("active"));
     }
 </script>
+
 </body>
 </html>
