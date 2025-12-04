@@ -1650,47 +1650,34 @@
      </section>
 
 
-            <!-- ===== PAGE 4 - MASKOT ===== -->
-        <section class="page4" id="info">
-            <div class="page4-container">
-                
-                <!-- Kiri: Penjelasan -->
-                <div class="page4-text">
-                    <h2 class="page4-title">Hai, aku adalah <br>"SI BOB"</h2>
-                    <p class="page4-desc">
-                        Si bob adalah kepanjangan dari “ Bird of Borneo” atau burung dari pulau borneo, ini adalah burung endemik di kalimantan yaitu “ Burung enggang gading/rangkok badak’ yang hanya dijumpai di wilayah kalimantan dan terancam punah 
-                    </p>
+<!-- ===== PAGE 4 - MASKOT ===== -->
+<section class="page4" id="info">
+    <div class="page4-container">
         
-                    <button class="btn-filosofi" id="openFilosofi">
-                        Lihat hasil Dokumentasi Bob →
-                    </button>
-                </div>
-        
-                <!-- Kanan: Gambar Maskot -->
-                <div class="page4-image">
-                    <img src="maskot.png" alt="Maskot TWNAS" />
-                </div>
-            </div>
-        </section>
-        
-        <!-- ===== POPUP FILOSOFI MASKOT ===== -->
-        <div class="popup-filosofi" id="popupFilosofi">
-            <div class="popup-filosofi-content">
-                <span class="close-filosofi" id="closeFilosofi">&times;</span>
-        
-                <h2 class="popup-title">Filosofi Maskot</h2>
-        
-                <div class="popup-image-wrapper">
-                    <img src="filosofi-maskot.png" class="popup-image" alt="Filosofi Maskot">
-                </div>
-            </div>
+        <!-- Kiri: Penjelasan -->
+        <div class="page4-text">
+            <h2 class="page4-title">Hai, aku adalah <br>"SI BOB"</h2>
+            <p class="page4-desc">
+                Si bob adalah kepanjangan dari “ Bird of Borneo” atau burung dari pulau borneo, ini adalah burung endemik di kalimantan yaitu “ Burung enggang gading/rangkok badak’ yang hanya dijumpai di wilayah kalimantan dan terancam punah 
+            </p>
+
+            <button class="btn-filosofi" id="openFilosofi">
+                Lihat hasil Dokumentasi Bob →
+            </button>
         </div>
-    </section>
-    
-<!-- ===== POPUP FILOSOFI MASKOT ===== -->
-<div class="popup-filosofi" id="popupFilosofi">
+
+        <!-- Kanan: Gambar Maskot -->
+        <div class="page4-image">
+            <img src="maskot.png" alt="Maskot TWNAS" />
+        </div>
+    </div>
+</section>
+
+<!-- ===== POPUP DOKUMENTASI SI BOB (FINAL) ===== -->
+<div class="popup-filosofi" id="popupFilosofiBob">
     <div class="popup-filosofi-content">
-        <span class="close-filosofi" id="closeFilosofi">&times;</span>
+        <span class="close-filosofi" id="closeFilosofiBob">&times;</span>
+
         <h2 class="popup-title">Filosofi & Link Si Bob</h2>
 
         <div class="popup-buttons">
@@ -1704,7 +1691,6 @@
         </div>
     </div>
 </div>
-
 
 
 
@@ -2029,90 +2015,88 @@
 
     <footer>© 2025 TWNAS XXXV | FKMTSI Indonesia. All Rights Reserved.</footer>
     
-    <script>
-        const header = document.getElementById("header");
-        window.addEventListener("scroll", () => header.classList.toggle("scrolled", window.scrollY > 50));
+   <script>
+    // --- HEADER SCROLL EFFECT ---
+    const header = document.getElementById("header");
+    window.addEventListener("scroll", () => header.classList.toggle("scrolled", window.scrollY > 50));
 
-        // --- FUNGSI POPUP UMUM ---
-        // Fungsi untuk mengaitkan tombol dengan popup dan menutupnya
-        const setupPopup = (buttonId, popupId, closeId) => {
-            const popupElement = document.getElementById(popupId);
-            const btn = document.getElementById(buttonId);
-            const closeBtn = document.getElementById(closeId);
+    // ============================================================
+    // UNIVERSAL POPUP HANDLER
+    // ============================================================
 
-            if (btn) btn.addEventListener("click", (e) => {
+    const setupPopup = (buttonId, popupId, closeId) => {
+        const btn = document.getElementById(buttonId);
+        const popup = document.getElementById(popupId);
+        const closeBtn = document.getElementById(closeId);
+
+        if (!popup) return;
+
+        if (btn) {
+            btn.addEventListener("click", (e) => {
                 e.preventDefault();
-                popupElement.classList.add("active");
+                popup.classList.add("active");
             });
+        }
 
-            const closePopupFunction = () => popupElement.classList.remove("active");
+        const closePopup = () => popup.classList.remove("active");
 
-            if (closeBtn) closeBtn.addEventListener("click", closePopupFunction);
-            if (popupElement) popupElement.addEventListener("click", e => {
-                if (e.target === popupElement) closePopupFunction();
-            });
-        };
+        if (closeBtn) closeBtn.addEventListener("click", closePopup);
 
-        // --- SETUP 5 POPUP BERBEDA ---
-        // 2. Filosofi Logo (Page 3 Button)
-        setupPopup("btnFilosofi", "popupFilosofi", "closePopupFilosofi");
-
-        // 3. Perjalanan TWNAS (Page 3 Button)
-        setupPopup("btnPerjalanan", "popupPerjalanan", "closePopupPerjalanan");
-
-
-        // 5. AutoPopup (Pesan Dion saat load)
-        const autoPopup = document.getElementById("autoPopup");
-        const closeAuto = document.getElementById("closeAuto");
-        window.addEventListener("load", () => setTimeout(() => autoPopup.classList.add("active"), 600));
-        closeAuto.addEventListener("click", () => autoPopup.classList.remove("active"));
-        autoPopup.addEventListener("click", e => { if (e.target === autoPopup) autoPopup.classList.remove("active"); });
-
-        // Popup Filosofi Maskot
-        const popupFilosofi = document.getElementById("popupFilosofi");
-        const openFilosofi = document.getElementById("openFilosofi");
-        const closeFilosofi = document.getElementById("closeFilosofi");
-        
-        openFilosofi.onclick = () => popupFilosofi.style.display = "flex";
-        closeFilosofi.onclick = () => popupFilosofi.style.display = "none";
-        
-        window.onclick = (e) => {
-            if (e.target === popupFilosofi) popupFilosofi.style.display = "none";
-        };
-
-
-        // POPUP PERJALANAN
-        const popupPerjalanan = document.getElementById("popupPerjalanan");
-        const closePopupPerjalanan = document.getElementById("closePopupPerjalanan");
-        
-        // Buka popup bisa kamu sambungkan dengan tombol misalnya id="btnPerjalanan"
-        document.getElementById("btnPerjalanan")?.addEventListener("click", () => {
-          popupPerjalanan.style.display = "flex";
+        popup.addEventListener("click", (e) => {
+            if (e.target === popup) closePopup();
         });
-        
-        // Tutup popup
-        closePopupPerjalanan.addEventListener("click", () => {
-          popupPerjalanan.style.display = "none";
-        });
-        
-        // Klik luar popup = tutup
-        window.addEventListener("click", (e) => {
-          if (e.target === popupPerjalanan) popupPerjalanan.style.display = "none";
+    };
+
+    // ============================================================
+    // SETUP SEMUA POPUP DI HALAMAN
+    // ============================================================
+
+    // 1. Popup Filosofi Logo (Page 3)
+    setupPopup("btnFilosofi", "popupFilosofi", "closePopupFilosofi");
+
+    // 2. Popup Perjalanan TWNAS
+    setupPopup("btnPerjalanan", "popupPerjalanan", "closePopupPerjalanan");
+
+    // 3. Popup Auto Pesan Dion
+    const autoPopup = document.getElementById("autoPopup");
+    const closeAuto = document.getElementById("closeAuto");
+
+    if (autoPopup) {
+        window.addEventListener("load", () => {
+            setTimeout(() => autoPopup.classList.add("active"), 600);
         });
 
+        if (closeAuto) closeAuto.addEventListener("click", () => autoPopup.classList.remove("active"));
 
+        autoPopup.addEventListener("click", e => {
+            if (e.target === autoPopup) autoPopup.classList.remove("active");
+        });
+    }
 
-        // --- SETUP ANIMASI SCROLL ---
-        const sections = document.querySelectorAll("section");
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
-        }, { threshold: 0.2 });
-        sections.forEach(sec => observer.observe(sec));
+    // 4. POPUP FILOSOFI MASKOT (KHUSUS PAGE 4)
+    setupPopup("openFilosofi", "popupFilosofiBob", "closeFilosofiBob");
 
-        // --- SETUP MENU MOBILE ---
-        const menuToggle = document.getElementById("menu-toggle");
-        const navMenu = document.getElementById("nav-menu");
+    // ============================================================
+    // SECTION ANIMATIONS
+    // ============================================================
+
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add("visible");
+        });
+    }, { threshold: 0.2 });
+    sections.forEach(sec => observer.observe(sec));
+
+    // ============================================================
+    // MOBILE MENU
+    // ============================================================
+
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+    if (menuToggle) {
         menuToggle.addEventListener("click", () => navMenu.classList.toggle("active"));
-    </script>
+    }
+</script>
 </body>
 </html>
