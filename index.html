@@ -760,6 +760,32 @@
             transform: scale(1.06);
         }
 
+    /* RESPONSIVE */
+@media (max-width: 900px) {
+
+    .page4-container {
+        flex-direction: column-reverse;
+        padding: 45px;
+        text-align: center;
+    }
+
+    .page4-title {
+        font-size: 2.6rem;
+    }
+
+    .page4-image img {
+        width: 260px; /* KODE ASLI TETAP ADA */
+    }
+}
+
+/* TAMBAHAN (MENIMPA UKURAN AGAR MASKOT LEBIH BESAR DI HP) */
+@media (max-width: 900px) {
+    .page4-image img {
+        width: 85vw;        /* mengikuti lebar layar */
+        max-width: 420px;   /* batas maksimal */
+        margin-top: 20px;
+    }
+}
 
 
         
