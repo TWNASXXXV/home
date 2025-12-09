@@ -787,6 +787,21 @@
     }
 }
 
+        /* WRAPPER UNTUK MERAPIKAN TOMBOL PAGE 4 */
+.page4-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 18px; /* jarak antar tombol */
+}
+
+/* RESPONSIVE - tombol rata tengah di HP */
+@media (max-width: 900px) {
+    .page4-buttons {
+        align-items: center;
+    }
+}
+
 
         
 /* ============== POPUP FILOSOFI SI BOB ============== */
@@ -1662,14 +1677,14 @@
                 Si bob adalah kepanjangan dari “ Bird of Borneo” atau burung dari pulau borneo, ini adalah burung endemik di kalimantan yaitu “ Burung enggang gading/rangkok badak’ yang hanya dijumpai di wilayah kalimantan dan terancam punah 
             </p>
 
-            <button class="btn-filosofi" id="openFilosofiBob">
+            <div class="page4-buttons">
+            <button class="btn-filosofi" id="openFilosofi">
                 Lihat hasil Dokumentasi Bob →
             </button>
-
-            <button class="btn-filosofi" id="openSertifikat">
+        
+            <button class="btn-filosofi btn-sertifikat" id="openSertifikat">
                 Sertifikat Peserta →
             </button>
-
         </div>
 
         <!-- Kanan: Gambar Maskot -->
