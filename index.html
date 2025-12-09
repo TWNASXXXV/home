@@ -1665,6 +1665,11 @@
             <button class="btn-filosofi" id="openFilosofiBob">
                 Lihat hasil Dokumentasi Bob →
             </button>
+
+            <button class="btn-filosofi" id="openSertifikat">
+                Sertifikat Peserta →
+            </button>
+
         </div>
 
         <!-- Kanan: Gambar Maskot -->
@@ -1692,6 +1697,22 @@
         </div>
     </div>
 </div>
+
+    <!-- ===== POPUP SERTIFIKAT PESERTA ===== -->
+<div class="popup-filosofi" id="popupSertifikat">
+    <div class="popup-filosofi-content">
+        <span class="close-filosofi" id="closeSertifikat">&times;</span>
+
+        <h2 class="popup-title">Sertifikat Peserta</h2>
+
+        <div class="popup-buttons">
+            <a href="https://link-sertifikat-kamu.com" target="_blank" class="popup-button">
+                Download Sertifikat
+            </a>
+        </div>
+    </div>
+</div>
+
 
 
 
@@ -2077,6 +2098,9 @@
     // 4. POPUP FILOSOFI MASKOT (KHUSUS PAGE 4)
     // >> INI PERBAIKAN YANG SEBENARNYA <<
     setupPopup("openFilosofiBob", "popupFilosofiBob", "closeFilosofiBob");
+    // Popup Sertifikat Peserta
+    setupPopup("openSertifikat", "popupSertifikat", "closeSertifikat");
+
 
     // ============================================================
     // SECTION ANIMATIONS
